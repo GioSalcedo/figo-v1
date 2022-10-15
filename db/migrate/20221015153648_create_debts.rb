@@ -1,7 +1,7 @@
-class CreateSavings < ActiveRecord::Migration[7.0]
+class CreateDebts < ActiveRecord::Migration[7.0]
   def change
-    create_table :savings do |t|
-      t.references :busines, null: false, foreign_key: true
+    create_table :debts do |t|
+      t.references :business, null: false, foreign_key: true
       t.string :name
       t.date :date
       t.integer :balance

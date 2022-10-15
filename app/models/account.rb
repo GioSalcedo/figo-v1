@@ -1,4 +1,4 @@
 class Account < ApplicationRecord
-  belongs_to :busines
-  belongs_to :banking
+  belongs_to :business
+  has_many :earnings, through: :bankings
 end

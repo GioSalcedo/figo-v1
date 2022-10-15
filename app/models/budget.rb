@@ -1,3 +1,3 @@
 class Budget < ApplicationRecord
-  belongs_to :busines
+  belongs_to :business
 end
