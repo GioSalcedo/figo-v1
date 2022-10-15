@@ -1,42 +1,46 @@
 class AccountsController < ApplicationController
+  before_action :set_account, only: %i[show edit update destroy]
   def index
-    @account = Account.all
+    @accounts = Account.all
   end
 
-  def show
-    @account = Account.find(params[:id])
-  end
+  def show; end
 
   def new
     @account = Account.new
-
   end
 
   def create
-    @account = Account.new(params[:account])
+    @account = Account.new(account_params)
     if @account.save
       redirect_to @account
     else
-      render :action => "new"
+      render :new
     end
   end
 
-  def edit
-    @account = Account.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @account = Account.find(params[:id])
-    if @account.update_attributes(params[:account])
+    if @account.update_attributes(account_params)
       redirect_to @account
     else
-      render => "edits"
+      render :edit
     end
   end
 
   def destroy
-    @account = Account.find(params[:id])
     @account.destroy
     redirect_to account_index_url
+  end
+
+  private
+
+  def set_account
+    @account = Account.find(params[:id])
+  end
+
+  def account_params
+    params.require(:account).permit(:business_id, :name, :date, :balance, :currency, :note)
   end
 end
