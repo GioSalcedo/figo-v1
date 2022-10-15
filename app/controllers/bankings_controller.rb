@@ -1,26 +1,45 @@
 class BankingsController < ApplicationController
   def index
-    @bakings = bakings.all
+    @bankings = Banking.all
   end
 
-  def show
-    @bakings = bakings.find(params[:id])
-  end
+  def show; end
 
   def new
-    @bakings = bakings.new
+    @bankings = Banking.new
   end
 
   def create
+    @bakings = Banking.new(banking_params)
+    if @bankings.save
+      redirect_to bankings
+    else
+      render :new
+    end
   end
 
-  def edit
-    @bakings = bakings.find(params[:id])
-  end
+  def edit; end
 
   def update
+    if @baking.update_attributes(banking_params)
+      redirect_to @banking
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @banking.destroy
+    redirect_to user_business_bankings
+  end
+
+  private
+
+  def set_bankings
+    @banking = Banking.find(params[:id])
+  end
+
+  def banking_params
+    params.require(:banking).permit(:business_id, :earning_id, :egress_id, :account_id)
   end
 end
