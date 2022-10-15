@@ -42,6 +42,5 @@ class SavingsController < ApplicationController
 
   def saving_params
     params.require(:saving).permit(:business_id, :name, :date, :balance, :currency, :note)
-
   end
 end
