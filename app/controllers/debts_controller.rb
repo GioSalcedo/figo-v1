@@ -1,7 +1,7 @@
 class DebtsController < ApplicationController
   before_action :set_debt, only: %i[show edit update destroy]
   def index
-    @debts = Debts.all
+    @debts = Debt.all
   end
 
   def show; end
