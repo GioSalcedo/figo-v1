@@ -1,5 +1,5 @@
 class EarningsController < ApplicationController
-  before_action :set_earning, only: [:show, :edit, :update, :destroy]
+  before_action :set_earning, only: %i[show edit update destroy]
 
   def index
     @earnings = Earning.where(user_id: current_user)

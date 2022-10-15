@@ -1,5 +1,5 @@
 class EgressesController < ApplicationController
-  before_action :set_egress, only: [:show, :edit, :update, :destroy]
+  before_action :set_egress, only: %i[show edit update destroy]
 
   def index
     @egresses = Egress.where(user_id: current_user)
