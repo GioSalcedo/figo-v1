@@ -1,2 +1,78 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIGO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="big-wrapper light">
+      <%= image_tag "shape.png" , class: "shape" %>
+
+        <header>
+          <div class="container">
+            <div class="logo">
+              <%= image_tag("logo.png") %>
+              <h3></h3>
+            </div>
+
+            <div class="links">
+              <ul>
+                <li><a href="#">Caracteristicas</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Testimonios</a></li>
+                <li><a href="#" class="btn-trans">Registrate</a></li>
+                <li><a href="#" class="btn">Inicia sesión</a></li>
+              </ul>
+            </div>
+
+            <div class="overlay"></div>
+
+            <div class="hamburger-menu">
+              <div class="bar"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="showcase-area">
+          <div class="container">
+            <div class="left">
+              <div class="big-title">
+                <h1>Administrar tus finanzas</h1>
+                <h1>nunca fué tan fácil.</h1>
+              </div>
+              <p class="text">
+                Ahorra tiempo administrando de manera eficiente como
+                se comportan tus finanzas desde la comodidad de tu computador o celular.
+              </p>
+              <div class="cta">
+                <a href="#" class="btn">Registrate</a>
+              </div>
+            </div>
+
+            <div class="right">
+              <%= image_tag "person.png" , class: "person" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-area">
+          <div class="container">
+            <button class="toggle-btn">
+              <i class="far fa-moon"></i>
+              <i class="far fa-sun"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript Files -->
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
