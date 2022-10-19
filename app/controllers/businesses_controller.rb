@@ -2,19 +2,21 @@ class BusinessesController < ApplicationController
   before_action :set_business, only: %i[show edit update destroy]
 
   def index
-    @businesses = Business.all
+    @businesses = Business.where(user_id: current_user)
   end
 
   def show; end
 
   def new
     @business = Business.new
+    @user = current_user
   end
 
   def create
-    @business = Business.new(params[:business])
+    @business = Business.new(business_params)
+    @business.user_id = current_user
     if @business.save
-      redirect_to @business
+      redirect_to business_path(@business)
     else
       render :new
     end
