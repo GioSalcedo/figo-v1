@@ -1,5 +1,4 @@
-# controlador que muestra todos los negocios que puede tener un usuario.
-class BusinessController < ApplicationController
+class BusinessesController < ApplicationController
   before_action :set_business, only: %i[show edit update destroy]
 
   def index
@@ -15,7 +14,7 @@ class BusinessController < ApplicationController
   def create
     @business = Business.new(params[:business])
     if @business.save
-      redirect_to @business, :notice => "Has creado tu empresa de forma exitosa."
+      redirect_to @business
     else
       render :new
     end
@@ -25,7 +24,7 @@ class BusinessController < ApplicationController
 
   def update
     if @business.update_attributes(business_params)
-      redirect_to @business, :notice  => "Has editado tu empresa de forma exitosa."
+      redirect_to @business
     else
       render :edit
     end
@@ -33,11 +32,10 @@ class BusinessController < ApplicationController
 
   def destroy
     @business.destroy
-    redirect_to business_index_url, :notice => "Has eliminado esta empresa de forma exitosa."
+    redirect_to business_index_url
   end
-end
 
-private
+  private
 
   def set_business
     @business = Business.find(params[:id])
