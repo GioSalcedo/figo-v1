@@ -24,8 +24,12 @@
                 <li><a href="#">Caracteristicas</a></li>
                 <li><a href="#">Noticias</a></li>
                 <li><a href="#">Testimonios</a></li>
-                <li><a href="#" class="btn-trans">Registrate</a></li>
-                <li><a href="#" class="btn">Inicia sesión</a></li>
+                <% if user_signed_in? %>
+                  <li><%= link_to "Cerrar Sección", destroy_user_session_path, method: :delete, class:"btn"%></li>
+                <% else %>
+                  <li><%= link_to "Login", new_user_session_path, class:"btn" %></li>
+                  <li><%= link_to "Sign up", new_user_registration_path, class:"btn"%></li>
+                <% end %>
               </ul>
             </div>
 
@@ -49,7 +53,7 @@
                 se comportan tus finanzas desde la comodidad de tu computador o celular.
               </p>
               <div class="cta">
-                <a href="#" class="btn">Registrate</a>
+                <%= link_to "Registrate", new_user_registration_path, class:"btn"  %>
               </div>
             </div>
 

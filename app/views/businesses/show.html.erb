@@ -1,2 +1,11 @@
 <h1>Businesses#show</h1>
-<p>Find me in app/views/businesses/show.html.erb</p>
+    <div class="card">
+      <div class="card-body">
+        <h5><%= @business.name %></h5>
+        <p><%= @business.description %></p>
+        <p><%= @business.logo %></p>
+      </div>
+    </div>
+<%= link_to "Regresar", user_businesses_path %>
+<%= link_to "Editar", edit_user_business_path %>
+<%= link_to "Eliminar", user_businesses_path, method: :delete, data: { confirm: "¿Estás seguro?" } %>
