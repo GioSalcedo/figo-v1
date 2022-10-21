@@ -1,8 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <%= simple_form_for @business do |f| %>
+    <%= simple_form_for @account do |f| %>
       <%= f.input :name %>
-      <%= f.input :description %> <%= f.input :logo %>
+      <%= f.input :balance %>
+      <%= f.input :currency %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>
   </div>
