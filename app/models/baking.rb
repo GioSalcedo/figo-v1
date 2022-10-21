@@ -1,5 +1,4 @@
-class Banking < ApplicationRecord
-  belongs_to :business
+class Baking < ApplicationRecord
   belongs_to :earning
   belongs_to :egress
   belongs_to :account

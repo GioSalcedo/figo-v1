@@ -1,2 +1,10 @@
 <h1>Accounts#index</h1>
-<p>Find me in app/views/accounts/index.html.erb</p>
+<%= link_to "Nueva Cuenta", new_business_path %>
+
+  <% @accounts.each do |account| %>
+    <div class="card">
+      <div class="card-body">
+        <%= link_to account.name, account %>
+      </div>
+    </div>
+  <% end %>

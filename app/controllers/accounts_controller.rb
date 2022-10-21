@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: %i[show edit update destroy]
   def index
-    @accounts = Account.all
+    @accounts = Account.where(business_id: current_user)
   end
 
   def show; end
@@ -12,8 +12,9 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
+    @account.business_id = current_user
     if @account.save
-      redirect_to @account
+      redirect_to account_path(@account)
     else
       render :new
     end
@@ -22,7 +23,7 @@ class AccountsController < ApplicationController
   def edit; end
 
   def update
-    if @account.update_attributes(account_params)
+    if @account.update(account_params)
       redirect_to @account
     else
       render :edit
@@ -31,7 +32,7 @@ class AccountsController < ApplicationController
 
   def destroy
     @account.destroy
-    redirect_to account_index_url
+    redirect_to accounts_path
   end
 
   private
