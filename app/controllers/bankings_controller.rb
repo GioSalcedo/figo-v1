@@ -1,4 +1,10 @@
 class BankingsController < ApplicationController
+  enum status: [:created, :canceled, :payed, :completed]
+
+  def played!
+
+  end
+
   def index
     @bankings = Banking.all
   end
