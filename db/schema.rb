@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_202607) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_210138) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,15 +24,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_202607) do
     t.index ["business_id"], name: "index_accounts_on_business_id"
   end
 
-  create_table "bakings", force: :cascade do |t|
+  create_table "bankings", force: :cascade do |t|
     t.bigint "earning_id", null: false
     t.bigint "egress_id", null: false
     t.bigint "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_bakings_on_account_id"
-    t.index ["earning_id"], name: "index_bakings_on_earning_id"
-    t.index ["egress_id"], name: "index_bakings_on_egress_id"
+    t.index ["account_id"], name: "index_bankings_on_account_id"
+    t.index ["earning_id"], name: "index_bankings_on_earning_id"
+    t.index ["egress_id"], name: "index_bankings_on_egress_id"
   end
 
   create_table "budgets", force: :cascade do |t|
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_202607) do
   end
 
   create_table "earnings", force: :cascade do |t|
+    t.bigint "account_id", null: false
     t.integer "balance"
     t.string "currency"
     t.string "category"
@@ -78,9 +79,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_202607) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_earnings_on_account_id"
   end
 
   create_table "egresses", force: :cascade do |t|
+    t.bigint "account_id", null: false
     t.integer "balance"
     t.string "currency"
     t.string "category"
@@ -89,6 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_202607) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_egresses_on_account_id"
   end
 
   create_table "savings", force: :cascade do |t|
@@ -116,11 +120,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_202607) do
   end
 
   add_foreign_key "accounts", "businesses"
-  add_foreign_key "bakings", "accounts"
-  add_foreign_key "bakings", "earnings"
-  add_foreign_key "bakings", "egresses"
+  add_foreign_key "bankings", "accounts"
+  add_foreign_key "bankings", "earnings"
+  add_foreign_key "bankings", "egresses"
   add_foreign_key "budgets", "businesses"
   add_foreign_key "businesses", "users"
   add_foreign_key "debts", "businesses"
+  add_foreign_key "earnings", "accounts"
+  add_foreign_key "egresses", "accounts"
   add_foreign_key "savings", "businesses"
 end

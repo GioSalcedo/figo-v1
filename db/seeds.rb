@@ -12,8 +12,6 @@ User.create(
   password_confirmation: "123456"
 )
 
-
-
 2.times do
   Business.create(
     user_id: 1,
@@ -23,7 +21,6 @@ User.create(
   )
 end
 
-
 Account.create(
   business_id: 1,
   name: "Cuenta de ahorro",
@@ -32,7 +29,6 @@ Account.create(
 )
 
  Earning.create(
-  account_id: 1,
   balance: 100000,
   currency: "COP",
   category: "Salario",
@@ -42,7 +38,6 @@ Account.create(
  )
 
  Egress.create(
-  account_id: 1,
   balance: 50000,
   currency: "COP",
   category: "Comida",
@@ -79,7 +74,7 @@ Account.create(
   )
 
   Banking.create(
-    business_id: 1,
     earning_id: 1,
-    egress_id: 1
+    egress_id: 1,
+    account_id: 1
   )
