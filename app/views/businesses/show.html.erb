@@ -6,6 +6,6 @@
         <p><%= @business.logo %></p>
       </div>
     </div>
-<%= link_to "Regresar", user_businesses_path %>
-<%= link_to "Editar", edit_user_business_path %>
-<%= link_to "Eliminar", user_businesses_path, method: :delete, data: { confirm: "¿Estás seguro?" } %>
+<%= link_to "Regresar", businesses_path %>
+<%= link_to "Editar", edit_business_path %>
+<%= button_to "Eliminar", business_path, method: :delete, data: { confirm: "Are you sure?" }, class:"btn" %>

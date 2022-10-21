@@ -12,8 +12,6 @@ User.create(
   password_confirmation: "123456"
 )
 
-
-
 2.times do
   Business.create(
     user_id: 1,
@@ -22,7 +20,6 @@ User.create(
     logo: Faker::Company.logo
   )
 end
-
 
 Account.create(
   business_id: 1,

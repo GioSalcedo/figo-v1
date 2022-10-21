@@ -9,6 +9,7 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
+    @business.user = current_user
   end
 
   def create
@@ -24,7 +25,7 @@ class BusinessesController < ApplicationController
   def edit; end
 
   def update
-    if @business.update_attributes(business_params)
+    if @business.update(business_params)
       redirect_to @business
     else
       render :edit
@@ -33,7 +34,7 @@ class BusinessesController < ApplicationController
 
   def destroy
     @business.destroy
-    redirect_to business_index_url
+    redirect_to businesses_path
   end
 
   private
