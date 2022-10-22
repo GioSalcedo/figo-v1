@@ -1,2 +1,14 @@
 <h1>Earnings#index</h1>
-<p>Find me in app/views/earnings/index.html.erb</p>
+
+<%= link_to 'New ingreso', new_banking_earning_path %>
+
+  <% @earnings.each do |earning| %>
+    <div class="card">
+      <div class="card-body">
+        <%= earning.balance%>
+        <%= earning.currency%>
+        <%= earning.date%>
+        <%= link_to "Ver detalles", banking_earning_path %>
+      </div>
+    </div>
+  <% end %>

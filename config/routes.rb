@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :bankings do
-    resources :incomes
+    resources :earnings
     resources :egresses
   end
 
