@@ -1,17 +1,20 @@
 class BudgetsController < ApplicationController
   before_action :set_budget, only: %i[show edit update destroy]
   def index
-    @budgets = Budget.all
+    @budgets = current_user.budgets
   end
 
   def show; end
 
   def new
     @budget = Budget.new
+    @business = Business.find(params[:business_id])
   end
 
   def create
     @budget = Budget.new(budget_params)
+    @business = Business.find(params[:business_id])
+    @budget.business_id = @business.id
     if @budget.save
       redirect_to @budget
     else

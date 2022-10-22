@@ -1,17 +1,20 @@
 class SavingsController < ApplicationController
   before_action :set_saving, only: %i[show edit update destroy]
   def index
-    @savings = Saving.all
+    @savings = current_user.savings
   end
 
   def show; end
 
   def new
     @saving = Saving.new
+    @business = Business.find(params[:business_id])
   end
 
   def create
     @saving = Saving.new(saving_params)
+    @business = Business.find(params[:business_id])
+    @saving.business_id = @business.id
     if @saving.save
       redirect_to @saving
     else
