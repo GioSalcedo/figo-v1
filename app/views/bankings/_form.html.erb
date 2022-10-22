@@ -3,10 +3,10 @@
     <%= simple_form_for @bankings do |f| %>
       <%= f.input :account.id.name %>
       <%= f.input :balance %>
-      <%= f.input :currency %>
+      <%= f.input :currency, as: :radio_buttons, collection:["COP","USD"] %>
       <%= f.input :account.id.name %>
       <%= f.input :balance %>
-      <%= f.input :currency %>
+      <%= f.input :currency, as: :radio_buttons, collection:["COP","USD"] %>
       <%= f.input :date, as: :date, order: [:day, :month, :year]%>
       <%= f.input :note %>
       <%= f.button :submit, class:"btn btn-secundary" %>
