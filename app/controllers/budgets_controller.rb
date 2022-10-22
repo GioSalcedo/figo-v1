@@ -22,7 +22,7 @@ class BudgetsController < ApplicationController
   def edit; end
 
   def update
-    if @budget.update_attributes(budget_params)
+    if @budget.update(budget_params)
       redirect_to @budget
     else
       render :edit
@@ -31,7 +31,7 @@ class BudgetsController < ApplicationController
 
   def destroy
     @budget.destroy
-    redirect_to account_index_url
+    redirect_to budgets_url
   end
 
   private

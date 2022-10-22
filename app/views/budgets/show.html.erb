@@ -1,2 +1,15 @@
 <h1>Budgets#show</h1>
-<p>Find me in app/views/budgets/show.html.erb</p>
+
+<h1>Savings#show</h1>
+    <div class="card">
+      <div class="card-body">
+        <h5><%= @budget.name %></h5>
+        <p><%= @budget.date %></p>
+        <p><%= @budget.balance %></p>
+        <p><%= @budget.currency %></p>
+        <p><%= @budget.note %></p>
+      </div>
+    </div>
+<%= link_to "Regresar", budgets_path %>
+<%= link_to "Editar", edit_budget_path %>
+<%= button_to "", budget_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
