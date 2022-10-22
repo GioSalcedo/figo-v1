@@ -5,6 +5,12 @@ class BankingsController < ApplicationController
 
   end
 
+  #this method should take one account and make balance transfer to the other account
+  def transferencias
+    @banking = Banking.find(params[:id])
+    @banking.transferencias
+    redirect_to @banking
+  end
   def index
     @bankings = Banking.all
   end

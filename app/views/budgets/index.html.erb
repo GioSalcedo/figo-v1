@@ -1,2 +1,11 @@
 <h1>Budgets#index</h1>
-<p>Find me in app/views/budgets/index.html.erb</p>
+
+<%= link_to 'Nuevo Presupuesto', new_budget_path %>
+
+  <% @budgets.each do |budget| %>
+    <div class="card">
+      <div class="card-body">
+        <%= link_to budget.name, budget %>
+      </div>
+    </div>
+  <% end %>
