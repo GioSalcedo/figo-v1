@@ -1,17 +1,20 @@
 class DebtsController < ApplicationController
   before_action :set_debt, only: %i[show edit update destroy]
   def index
-    @debts = Debt.all
+    @debts = current_user.debts
   end
 
   def show; end
 
   def new
     @debt = Debt.new
+    @business = Business.find(params[:business_id])
   end
 
   def create
     @debt = Debt.new(debt_params)
+    @business = Business.find(params[:business_id])
+    @debt.business_id = @business.id
     if @debt.save
       redirect_to @debt
     else
