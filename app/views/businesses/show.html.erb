@@ -3,7 +3,7 @@
       <div class="card-body">
         <h5><%= @business.name %></h5>
         <p><%= @business.description %></p>
-        <p><%= @business.logo %></p>
+        <%= cl_image_tag @business.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
 <%= link_to "Regresar", businesses_path %>

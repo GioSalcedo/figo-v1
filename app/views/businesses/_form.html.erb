@@ -2,7 +2,8 @@
   <div class="col-md-6">
     <%= simple_form_for @business do |f| %>
       <%= f.input :name %>
-      <%= f.input :description %> <%= f.input :logo %>
+      <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>
   </div>

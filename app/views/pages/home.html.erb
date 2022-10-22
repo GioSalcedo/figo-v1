@@ -27,7 +27,8 @@
                 <li><a href="#">Noticias</a></li>
                 <li><a href="#">Testimonios</a></li>
                 <% if user_signed_in? %>
-                  <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class:"btn"%></li>
+                  <li><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } } %>
+</li>
                 <% else %>
                   <li><%= link_to "Login", new_user_session_path, class:"btn" %></li>
                   <li><%= link_to "Sign up", new_user_registration_path, class:"btn"%></li>
