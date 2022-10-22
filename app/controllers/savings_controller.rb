@@ -31,7 +31,7 @@ class SavingsController < ApplicationController
 
   def destroy
     @saving.destroy
-    redirect_to account_index_url
+    redirect_to savings_path
   end
 
   private
