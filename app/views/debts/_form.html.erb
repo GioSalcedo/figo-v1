@@ -4,7 +4,7 @@
       <%= f.input :name %>
       <%= f.input :date, as: :date, order: [:day, :month, :year]%>
       <%= f.input :balance %>
-      <%= f.input :currency %>
+      <%= f.input :currency, as: :radio_buttons, collection:["COP","USD"] %>
       <%= f.input :note %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>
