@@ -47,6 +47,7 @@ gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+gem "cloudinary"
 gem "faker"
 gem "devise"
 gem "autoprefixer-rails"
@@ -76,5 +77,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "cloudinary"
+
 end
