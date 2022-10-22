@@ -4,4 +4,5 @@ class Business < ApplicationRecord
   has_many :savings
   has_many :debts
   has_many :budgets
+  has_one_attached :photo
 end

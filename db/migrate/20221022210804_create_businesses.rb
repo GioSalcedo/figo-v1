@@ -4,7 +4,6 @@ class CreateBusinesses < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
       t.string :name
       t.text :description
-      t.string :logo
 
       t.timestamps
     end
