@@ -1,16 +1,6 @@
 class BankingsController < ApplicationController
-  enum status: [:created, :canceled, :payed, :completed]
+  before_action :set_bankings, only: %i[show edit update destroy]
 
-  def played!
-
-  end
-
-  #this method should take one account and make balance transfer to the other account
-  def transferencias
-    @banking = Banking.find(params[:id])
-    @banking.transferencias
-    redirect_to @banking
-  end
   def index
     @bankings = Banking.all
   end
