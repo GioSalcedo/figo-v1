@@ -1,2 +1,14 @@
 <h1>Debts#show</h1>
-<p>Find me in app/views/debts/show.html.erb</p>
+
+    <div class="card">
+      <div class="card-body">
+        <h5><%= @debt.name %></h5>
+        <p><%= @debt.date %></p>
+        <p><%= @debt.balance %></p>
+        <p><%= @debt.currency %></p>
+        <p><%= @debt.note %></p>
+      </div>
+    </div>
+<%= link_to "Regresar", debts_path %>
+<%= link_to "Editar", edit_debt_path %>
+<%= button_to "", debt_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>

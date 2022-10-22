@@ -22,7 +22,7 @@ class DebtsController < ApplicationController
   def edit; end
 
   def update
-    if @debt.update_attributes(debt_params)
+    if @debt.update(debt_params)
       redirect_to @debt
     else
       render :edit
@@ -31,7 +31,7 @@ class DebtsController < ApplicationController
 
   def destroy
     @debt.destroy
-    redirect_to account_index_url
+    redirect_to debts_path
   end
 
   private
