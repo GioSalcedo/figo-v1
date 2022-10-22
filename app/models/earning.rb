@@ -1,3 +1,4 @@
 class Earning < ApplicationRecord
-  belongs_to :account
+  belongs_to :Account
+  has_one :Banking
 end

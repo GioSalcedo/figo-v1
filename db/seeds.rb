@@ -76,8 +76,7 @@ Account.create(
   )
 
   Banking.create(
-    business_id: 1,
     earning_id: 1,
     egress_id: 1,
-    account_id: 1,
+    account_id: 1
   )

@@ -2,19 +2,19 @@ class EarningsController < ApplicationController
   before_action :set_earning, only: %i[show edit update destroy]
 
   def index
-    @earnings = Earning.where(user_id: current_user)
+    @earnings = Earning.where(account_id: params[:account_id])
   end
 
   def show; end
 
   def new
     @earning = Earning.new
+    @earning.account = Account.find(params[:account_id])
   end
 
   def create
     @earning = Earning.new(earning_params)
     @earning.account = Account.find(params[:account_id])
-    @earning.user = current_user
     if @earning.save
       redirect_to account_path(@earning.account)
     else

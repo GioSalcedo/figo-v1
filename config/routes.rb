@@ -6,9 +6,13 @@ Rails.application.routes.draw do
   resources :accounts do
     resources :bankings
   end
-
+  
   resources :bankings do
     resources :earnings
     resources :egresses
   end
+
+  resources :savings
+  resources :debts
+  resources :budgets
 end
