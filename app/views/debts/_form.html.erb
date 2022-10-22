@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <%= simple_form_for @debt do |f| %>
+      <%= f.input :name %>
+      <%= f.input :date, as: :date, order: [:day, :month, :year]%>
+      <%= f.input :balance %>
+      <%= f.input :currency %>
+      <%= f.input :note %>
+      <%= f.button :submit, class:"btn btn-secundary" %>
+    <% end %>
+  </div>
+</div>

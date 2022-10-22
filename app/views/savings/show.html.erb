@@ -1,2 +1,13 @@
 <h1>Savings#show</h1>
-<p>Find me in app/views/savings/show.html.erb</p>
+    <div class="card">
+      <div class="card-body">
+        <h5><%= @saving.name %></h5>
+        <p><%= @saving.date %></p>
+        <p><%= @saving.balance %></p>
+        <p><%= @saving.currency %></p>
+        <p><%= @saving.note %></p>
+      </div>
+    </div>
+<%= link_to "Regresar", savings_path %>
+<%= link_to "Editar", edit_saving_path %>
+<%= button_to "", saving_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>

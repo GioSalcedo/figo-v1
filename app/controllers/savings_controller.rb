@@ -22,7 +22,7 @@ class SavingsController < ApplicationController
   def edit; end
 
   def update
-    if @saving.update_attributes(saving_params)
+    if @saving.update(saving_params)
       redirect_to @saving
     else
       render :edit
@@ -31,7 +31,7 @@ class SavingsController < ApplicationController
 
   def destroy
     @saving.destroy
-    redirect_to account_index_url
+    redirect_to savings_path
   end
 
   private
@@ -41,6 +41,6 @@ class SavingsController < ApplicationController
   end
 
   def saving_params
-    params.require(:saving).permit(:business_id, :name, :date, :balance, :currency, :note)
+    params.require(:saving).permit(:name, :balance, :currency, :date, :note)
   end
 end
