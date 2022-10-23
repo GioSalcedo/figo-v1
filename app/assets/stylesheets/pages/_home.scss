@@ -125,7 +125,7 @@ header .container {
   display: inline-block;
   padding: 0.9rem 1.9rem;
   color: #fff !important;
-  background-color: var(--mainColor);
+  background-color: #0b759d;
   border-radius: 16px;
   text-transform: capitalize;
   transition: 0.3s;
@@ -476,22 +476,29 @@ header .container {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba($color: #fff, $alpha: 0.75)
+    background: rgba($color: #fff, $alpha: 0.75);
 }
 
 .fondo .titulo h1{
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   color: var(--darkOne);
   line-height: 1.4;
+  margin: 36px;
 }
 
 .fondo .titulo span{
-  font-size: 1.4rem;
+  font-size: 4.0rem;
   color: #0b759d;
   line-height: 1.4;
   font-family: League Spartan;
   font-weight: 800;
+  margin: 40px;
 }
+
+.fondo .titulo .h2{
+  margin: 50px;
+}
+
 
 @keyframes appear {
   0% {
