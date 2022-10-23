@@ -12,27 +12,24 @@ User.create(
   password_confirmation: "123456"
 )
 
-Business.create(
-  user_id: 1,
-  name: "Mango Biche"
-  description: "Microempresa dedicada a la venta y distribucion de mango en la ciudad de Medellin"
-  logo:  "https://unicentromedellin.com.co/media/zoo/images/Logo-mango-unicentro-medellin_c4c83037b55b45ac6636961e17aa84a6.png"
-)
+  Business.create(
+    user_id: 1,
+    name: "Mango Biche",
+    description: "Microempresa dedicada a la venta y distribucion de mango en la ciudad de Medellin"
+  )
 
 
 Business.create(
   user_id: 1,
-  name: "Vector Foods"
+  name: "Vector Foods",
   description:"Una empresa dedicada a la creacion de snacks cuya propuesta  se enfoca en ingredientes diferenciadores premium como el aceite de aguacate y la sal rosada del Himalaya, entre otros, además de la rapidez con la que saben adaptarse a las nuevas necesidades de los consumidores"
-  logo: "https://cdn.forbes.co/2022/07/Monterrojo.jpg"
 )
 
 
 Business.create(
   user_id: 1,
-  name: "Natif by Issa Vásquez"
+  name: "Natif by Issa Vásquez",
   description:" Empresa dedicada ala creacion de productos con pocos conservantes. Su meta es llegar a ser el pan saludable más consumido en todo el país, así como incursionar en todos los formatos de venta: retail, grandes cadenas, stands saludables, farmacias, entre otros."
-  logo: "https://natifbyissavasquez.com/wp-content/uploads/2021/08/logonatif.png"
 )
 
 
@@ -93,5 +90,4 @@ Account.create(
   Banking.create(
     earning_id: 1,
     egress_id: 1,
-    account_id: 1
   )

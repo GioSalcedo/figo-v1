@@ -210,6 +210,7 @@ header .container {
   margin: 1.9rem 0 2.5rem;
   max-width: 600px;
   line-height: 2.3;
+  border: black 1px;
 }
 
 .showcase-area .btn {
@@ -302,8 +303,9 @@ header .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
-
 }
+
+
 
 .big-title-center {
   font-size: 1.4rem;
@@ -315,10 +317,6 @@ header .container {
 
 .services-wrapper .service {
   text-align: center;
-  border-color: #192e3a;
-  border-radius: 20px;
-  padding: 30px 20px;
-
 }
 
 
