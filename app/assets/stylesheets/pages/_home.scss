@@ -555,21 +555,19 @@ header .container {
 
 
 .gradient{
-  background: linear-gradient(45deg, #0b759d 0%, #1fbabf 25%, #64bcf4 50%, #1fbabf 75%, #5bacdf 100%);
-  background-size: 400%;
-  position: relative;
-  animation: cambiar 2s ease infinite;
-}
+  background-image: linear-gradient(90deg, #0b759d, #1fbabf, #64bcf4, #1fbabf, #5bacdf, #0b759d, #1fbabf);
+  background-size: 600% 100%;
+  animation: cambiar 2s linear infinite;
+  }
+
 
 @keyframes cambiar {
   0% {
-    background-position: 0 50%;
+    background-position: 100% 0%;
   }
-  50% {
-    background-position: 51 100%;
-  }
+
   100% {
-    background-position: 100% 0;
+    background-position: 0% 0%;
   }
 }
 
@@ -614,6 +612,100 @@ header .container {
   margin: 50px;
 }
 
+
+body {
+  overflow: hidden;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-light {
+  background-color: var(--light) !important;
+}
+
+.bg-grey {
+  background-color: var(--grey) !important;
+}
+
+.bg-mix {
+  background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+}
+
+#sidebar-container {
+  min-height: 100vh;
+}
+
+#sidebar-container .logo {
+  padding: 0.875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+  width: 18rem;
+}
+
+#content {
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.avatar {
+  max-width: 35px;
+}
+
+.btn-search {
+  right: 0;
+}
+
+.stat {
+  border-right: 1px solid var(--grey);
+}
+
+.logo h4 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.tabla {
+  background: #fff;
+  width: 100%;
+  border-radius: var(--border-radius-1);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+
+@media (max-width: 768px) {
+  #sidebar-container {
+    display: none;
+  }
+
+  .stat {
+    border: 0;
+  }
+}
 
 @keyframes appear {
   0% {
