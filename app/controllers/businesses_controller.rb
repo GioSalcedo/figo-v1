@@ -5,7 +5,9 @@ class BusinessesController < ApplicationController
     @businesses = current_user.businesses
   end
 
-  def show; end
+  def show
+    # @account =
+  end
 
   def new
     @business = Business.new

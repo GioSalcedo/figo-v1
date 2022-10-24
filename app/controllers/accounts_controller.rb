@@ -4,7 +4,9 @@ class AccountsController < ApplicationController
     @accounts = Account.where(business_id: current_user)
   end
 
-  def show; end
+  def show
+    @accounts = Account.where(business_id: current_user)
+  end
 
   def new
     @account = Account.new
@@ -42,6 +44,6 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:bussiness_id, :name, :balance, :currency)
+    params.require(:account).permit(:business_id, :name, :balance, :currency)
   end
 end
