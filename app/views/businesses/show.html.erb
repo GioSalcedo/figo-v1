@@ -1,14 +1,1 @@
-<h1>Businesses#show</h1>
-    <div class="card">
-      <div class="card-body">
-        <h5><%= @business.name %></h5>
-        <p><%= @business.description %></p>
-        <%= cl_image_tag @business.photo.key, height: 300, width: 400, crop: :fill %>
-      </div>
-    </div>
-<%= link_to "Regresar", businesses_path %>
-<%= link_to "Editar", edit_business_path %>
-<%= link_to "Crear Nueva Meta", new_business_saving_path(@business) %>
-<%= link_to "Crear Nueva Deuda", new_business_debt_path(@business) %>
-<%= link_to "Crear Nuevo Presupuesto", new_business_budget_path(@business) %>
-<%= button_to "", business_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+<%= render "shared/dashboard" %>
