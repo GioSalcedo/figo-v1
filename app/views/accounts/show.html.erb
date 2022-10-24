@@ -1,11 +1,19 @@
-<h1>Accounts#show</h1>
-<div class="card">
-      <div class="card-body">
-        <h5><%= @account.name %></h5>
-        <p><%= @account.balance %></p>
-        <p><%= @account.currency %></p>
+<div class="d-flex" id="content-wrapper">
+<%= render "shared/aside" %>
+
+<div class="container">
+
+  <h1>Tu cuenta</h1>
+  <div class="card">
+        <div class="card-body">
+          <h5><%= @account.name %></h5>
+          <p><%= @account.balance %></p>
+          <p><%= @account.currency %></p>
+        </div>
       </div>
-    </div>
-<%= link_to "Regresar", accounts_path %>
-<%= link_to "Editar", edit_account_path %>
-<%= button_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+  <%= link_to "Regresar", accounts_path %>
+  <%= link_to "Editar", edit_account_path %>
+  <%= button_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+
+  </div>
+</div>
