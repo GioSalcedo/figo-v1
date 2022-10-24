@@ -1,7 +1,119 @@
 // Specific CSS for your home-page
 @import url("https://fonts.googleapis.com/css2?family=Open-sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background-color: #f3f3f3;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 450px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+}
+
+.wrapper .left{
+  width: 35%;
+  background: linear-gradient(to right,#01a9ac,#01dbdf);
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.wrapper .left img{
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.wrapper .left h4{
+  margin-bottom: 10px;
+}
+
+.wrapper .left p{
+  font-size: 12px;
+}
+
+.wrapper .right{
+  width: 65%;
+  background: #fff;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects{
+  margin-bottom: 25px;
+}
+
+.wrapper .right .info h3,
+.wrapper .right .projects h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.wrapper .right .info_data,
+.wrapper .right .projects_data{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data{
+  width: 45%;
+}
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4{
+    color: #353c4e;
+    margin-bottom: 50px;
+}
+
+.wrapper .right .info_data .data p,
+.wrapper .right .projects_data .data p{
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #919aa3;
+}
+
+.wrapper .social_media ul{
+  display: flex;
+}
+
+.wrapper .social_media ul li{
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(to right,#01a9ac,#01dbdf);
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.wrapper .social_media ul li a{
+  color :#fff;
+  display: block;
+  font-size: 18px;
+}
 
 .light {
   --mainColor: #0b759d;
@@ -125,7 +237,7 @@ header .container {
   display: inline-block;
   padding: 0.9rem 1.9rem;
   color: #fff !important;
-  background-color: var(--mainColor);
+  background-color: #0b759d;
   border-radius: 16px;
   text-transform: capitalize;
   transition: 0.3s;
@@ -446,7 +558,7 @@ header .container {
   background: linear-gradient(45deg, #0b759d 0%, #1fbabf 25%, #64bcf4 50%, #1fbabf 75%, #5bacdf 100%);
   background-size: 400%;
   position: relative;
-  animation: cambiar 5s ease infinite;
+  animation: cambiar 2s ease infinite;
 }
 
 @keyframes cambiar {
@@ -469,6 +581,9 @@ header .container {
   margin-top: 2rem;
   justify-content: center;
 }
+.emoji{
+  margin-top: auto;
+}
 
 .fondo .titulo{
     border-radius: 0.5rem;
@@ -476,22 +591,29 @@ header .container {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba($color: #fff, $alpha: 0.75)
+    background: rgba($color: #fff, $alpha: 0.75);
 }
 
 .fondo .titulo h1{
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   color: var(--darkOne);
   line-height: 1.4;
+  margin: 36px;
 }
 
 .fondo .titulo span{
-  font-size: 1.4rem;
+  font-size: 4.0rem;
   color: #0b759d;
   line-height: 1.4;
   font-family: League Spartan;
   font-weight: 800;
+  margin: 40px;
 }
+
+.fondo .titulo .h2{
+  margin: 50px;
+}
+
 
 @keyframes appear {
   0% {

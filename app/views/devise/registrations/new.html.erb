@@ -1,5 +1,11 @@
-<h2>Sign up</h2>
-
+<div class="gradient">
+  <div class="fondo">
+    <div class="titulo">
+      <h1>🏦Inicia la aventura🏦</h1>
+      <span>FIGO</span>
+      <h2>Registrate aquí</h2>
+    </div>
+<div class="formulario">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -23,3 +29,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+  </div>
+  </div>
+</div>

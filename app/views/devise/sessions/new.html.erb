@@ -1,7 +1,8 @@
 <div class="gradient">
   <div class="fondo">
     <div class="titulo">
-      <h1>Bienvenido a <span>FIGO</span></h1>
+      <h1>Bienvenido a</h1>
+      <span>FIGO</span>
       <h2>Inicia sesión</h2>
     </div>
 
@@ -18,9 +19,9 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
-        </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Inicia Sesión" %>
+      </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
