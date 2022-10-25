@@ -2,9 +2,9 @@
 <p>Find me in app/views/bankings/new.html.erb</p>
 
 
-<%# <div class="row justify-content-center">
+<div class="row justify-content-center">
   <div class="col-md-6">
-    <%= simple_form_for [@user, @bankings] do |f| %>
+    <%= simple_form_for [@user, @bankings] do |f|
       <%= f.input :account_id %>
       <%= f.input :business_id %>
       <%= f.button :submit, class:"btn btn-secundary" %>
