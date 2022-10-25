@@ -11,7 +11,7 @@
           <p><%= @account.currency %></p>
         </div>
       </div>
-  <%= link_to "Regresar", accounts_path %>
+  <%= link_to "Regresar", businesses_path %>
   <%= link_to "Editar", edit_account_path %>
   <%= button_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
 
