@@ -23,11 +23,11 @@
 
             <div class="links">
               <ul>
-                <li><a href="#">Caracteristicas</a></li>
+                <!--<li><a href="#">Caracteristicas</a></li>
                 <li><a href="#">Noticias</a></li>
-                <li><a href="#">Testimonios</a></li>
+                <li><a href="#">Testimonios</a></li>-->
                 <% if user_signed_in? %>
-                  <li><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } } %>
+                  <li><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn" %>
 </li>
                 <% else %>
                   <li><%= link_to "Login", new_user_session_path, class:"btn" %></li>
