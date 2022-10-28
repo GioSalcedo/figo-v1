@@ -6,12 +6,13 @@ Rails.application.routes.draw do
     resources :savings, only: %i[new create]
     resources :debts, only: %i[new create]
     resources :budgets, only: %i[new create]
+    resources :bankings, only: %i[create]
   end
   resources :accounts do
-    resources :bankings
+    resources :bankings, except: %i[create]
   end
 
-  resources :bankings do
+  resources :bankings, except: %i[create] do
     resources :earnings
     resources :egresses
   end

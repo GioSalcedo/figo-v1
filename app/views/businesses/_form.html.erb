@@ -1,10 +1,12 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <%= simple_form_for @business do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class:"btn btn-secundary" %>
+    <%= simple_form_for [@business, Banking.new] do |f| %>
+      <%= f.simple_fields_for :accounts do |o| %>
+        <%= o.input :balance %>
+        <%= o.select :sender_account, @business.accounts.map { |account| account.name + " " + account.id.to_s }%>
+        <%= o.select :receptor_account, @business.accounts.map { |account| account.name + " " + account.id.to_s }%>
+        <% end %>
+      <%= f.submit %>
     <% end %>
   </div>
 </div>
