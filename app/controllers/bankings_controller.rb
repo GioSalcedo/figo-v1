@@ -8,13 +8,24 @@ class BankingsController < ApplicationController
   def show; end
 
   def new
-    @bankings = Banking.new
+    @banking = Banking.new
   end
 
   def create
-    @bakings = Banking.new(banking_params)
-    if @bankings.save
-      redirect_to bankings
+    sender_account = Account.find(params[:banking][:accounts][:sender_account].split[-1])
+    receptor_account = Account.find(params[:banking][:accounts][:receptor_account].split[-1])
+    earning = Earning.create(balance: params[:banking][:accounts][:balance].to_i, account_id: sender_account.id)
+    egress = Egress.create(balance: params[:banking][:accounts][:balance].to_i, account_id: receptor_account.id)
+    @banking = Banking.new
+    @banking.earning = earning
+    @banking.egress = egress
+    @banking.user = current_user
+    if @banking.save
+      sender_account.balance -= params[:banking][:accounts][:balance].to_i
+      sender_account.save
+      receptor_account.balance += params[:banking][:accounts][:balance].to_i
+      receptor_account.save
+      redirect_to business_path(Business.find(params[:business_id]))
     else
       render :new
     end
@@ -23,7 +34,7 @@ class BankingsController < ApplicationController
   def edit; end
 
   def update
-    if @baking.update_attributes(banking_params)
+    if @banking.update_attributes(banking_params)
       redirect_to @banking
     else
       render :edit
@@ -42,6 +53,6 @@ class BankingsController < ApplicationController
   end
 
   def banking_params
-    params.require(:banking).permit(:business_id, :earning_id, :egress_id, :account_id)
+    params.require(:banking).permit(:user_id, :earning_id, :egress_id, :account_id)
   end
 end

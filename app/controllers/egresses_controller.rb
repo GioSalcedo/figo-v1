@@ -9,16 +9,19 @@ class EgressesController < ApplicationController
 
   def new
     @egress = Egress.new
+    @egress.account = Account.find(params[:account_id])
   end
 
   def create
     @egress = Egress.new(egress_params)
     @egress.account = Account.find(params[:account_id])
-    @egress.user = current_user
     if @egress.save
-      redirect_to account_path(@egress.account)
+      @account = @egress.account
+      @account.balance -= @egress.balance
+      @account.save
+      redirect_to account_egresses_path(@account)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

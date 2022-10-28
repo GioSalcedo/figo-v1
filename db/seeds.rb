@@ -99,7 +99,6 @@ Account.create(
     note: "Pago de presupuesto"
   )
 
-
 Banking.create(
   earning_id: 1,
   egress_id: 1,
