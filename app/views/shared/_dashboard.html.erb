@@ -103,12 +103,13 @@
                   </h3>
                 </div>
               </div>
-              <% total = 0 %> <% @business.accounts.each do |account| %> <%
-              total += account.balance %> <% end %>
+              <% total = 0 %>
+              <% @business.accounts.each do |account| %>
+                <% total += account.balance %>
+              <% end %>
               <div
                 class="info"
-                style="display: flex; justify-content: space-between"
-              >
+                style="display: flex; justify-content: space-between">
                 <h6>Balance Total</h6>
                 <h6><%= total %></h6>
                 <h6><%= @business.accounts.first.currency %></h6>
