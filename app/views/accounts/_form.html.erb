@@ -3,7 +3,7 @@
     <%= simple_form_for @account do |f| %>
       <%= f.input :name %>
       <%= f.input :balance %>
-      <%= f.input :currency, as: :radio_buttons, collection:["COP","USD"] %>
+      <%= f.input :currency, as: :radio_buttons, collection:["COP"] %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>
   </div>
