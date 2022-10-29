@@ -81,6 +81,51 @@ Account.create(
     note: "Pago de deuda"
   )
 
+  Debt.create(
+    business_id: 1,
+    name: "Deuda servicios publicos",
+    balance: 800000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de deuda"
+  )
+
+  Debt.create(
+    business_id: 1,
+    name: "Deuda de viaje",
+    balance: 800000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de deuda"
+  )
+
+  Debt.create(
+    business_id: 1,
+    name: "Deuda  de pago de nomina",
+    balance: 1000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de deuda"
+  )
+
+  Debt.create(
+    business_id: 1,
+    name: "Deuda credito en Exito",
+    balance: 7000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de deuda"
+  )
+
+  Debt.create(
+    business_id: 1,
+    name: "Deudas con el provedor ",
+    balance: 1000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de deuda"
+  )
+
   Saving.create(
     business_id: 1,
     name: "Ahorro para el negocio",
@@ -90,10 +135,97 @@ Account.create(
     note: "Pago de ahorro"
   )
 
+  Saving.create(
+    business_id: 1,
+    name: "Aporte a salud y pension",
+    balance: 1000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de salud y pension"
+  )
+
+  Saving.create(
+    business_id: 1,
+    name: "Compra de maquinarias",
+    balance: 500000,
+    currency: "COP",
+    date: Date.today,
+    note: "Compra de enfriadores"
+  )
+  Saving.create(
+    business_id: 1,
+    name: "Ahorro para un viaje de negocio",
+    balance: 2000000,
+    currency: "COP",
+    date: Date.today,
+    note: "viaje a Santa Marta"
+  )
+  Saving.create(
+    business_id: 1,
+    name: "Compra de materiales",
+    balance: 100000,
+    currency: "COP",
+    date: Date.today,
+    note: "material para hacer el producto"
+  )
+
+  Saving.create(
+    business_id: 1,
+    name: "Ahorra para paga de nomina",
+    balance: 800000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de salario"
+  )
   Budget.create(
     business_id: 1,
     name: "Presupuesto para el negocio",
     balance: 50000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de presupuesto"
+  )
+
+  Budget.create(
+    business_id: 1,
+    name: "Presupuesto para nomina",
+    balance: 8000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de presupuesto"
+  )
+
+  Budget.create(
+    business_id: 1,
+    name: "Presupuesto para el arriendo",
+    balance: 2000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de presupuesto"
+  )
+
+  Budget.create(
+    business_id: 1,
+    name: "Presupuesto para los impuestos",
+    balance: 4000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de presupuesto"
+  )
+
+  Budget.create(
+    business_id: 1,
+    name: "Presupuesto para viajes de trabajos",
+    balance: 4000000,
+    currency: "COP",
+    date: Date.today,
+    note: "Pago de presupuesto"
+  )
+
+  Budget.create(
+    business_id: 1,
+    name: "Presupuesto para vacaciones",
+    balance: 900000,
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
