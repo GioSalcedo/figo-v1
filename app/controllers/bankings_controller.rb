@@ -9,6 +9,7 @@ class BankingsController < ApplicationController
 
   def new
     @banking = Banking.new
+    @business = Business.find(params[:business_id])
   end
 
   def create
@@ -16,7 +17,8 @@ class BankingsController < ApplicationController
     receptor_account = Account.find(params[:banking][:accounts][:receptor_account].split[-1])
     earning = Earning.create(balance: params[:banking][:accounts][:balance].to_i, account_id: sender_account.id)
     egress = Egress.create(balance: params[:banking][:accounts][:balance].to_i, account_id: receptor_account.id)
-    @banking = Banking.new
+    @business = Business.find(params[:business_id])
+    @banking = Banking.new(banking_params)
     @banking.earning = earning
     @banking.egress = egress
     @banking.user = current_user
