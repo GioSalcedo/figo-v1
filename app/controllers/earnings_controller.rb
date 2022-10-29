@@ -9,14 +9,15 @@ class EarningsController < ApplicationController
 
   def new
     @earning = Earning.new
+    @account = Account.find(params[:account_id])
   end
 
   def create
     @earning = Earning.new(earning_params)
     @earning.account = Account.find(params[:account_id])
     if @earning.save
-      @earning.account.balance += @earning.balance
-      @earning.account.save
+      new_balance = @earning.account.balance + @earning.balance
+      @earning.account.update(balance: new_balance)
       redirect_to account_path(@earning.account)
     else
       render :new
