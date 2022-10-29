@@ -4,7 +4,7 @@
 
   <div class="w-100">
     <!-- Navbar -->
-    <%#
+    <!-- <%#
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <div class="container">
         <button
@@ -63,181 +63,154 @@
         </div>
       </div>
     </nav>
-    %>
+    %> -->
     <!-- Fin Navbar -->
-
-  <div id="content" class="bg-grey w-100">
-
-              <section class="bg-light py-3">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-lg-9 col-md-8">
-                            <h1 class="font-weight-bold mb-0">Bienvenido, <%= @business.user.email %></h1>
-                            <p class="lead text-muted">Este es el estado de cuenta de  <span><%= @business.name %></span></p>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-
-              <section class="bg-mix py-3">
-                <div class="container">
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                            <div class="row">
-                                <% @business.accounts.each do |account| %>
-                                <div class="col-lg-3 col-md-6 d-flex stat my-3">
-                                    <div class="mx-auto">
-                                        <h6 class="text-muted"><%= account.name %></h6>
-                                        <h3 class="font-weight-bold"><%= account.balance %></h3>
-                                        <h3 class="font-weight-bold"><%= account.currency %></h3>
-                                    </div>
-                                </div>
-                                <% end %>
-                                <div class="col-lg-3 col-md-6 d-flex my-3">
-                                    <div class="mx-auto">
-                                        <h6 class="text-muted">Agregar nueva cuenta</h6>
-                                        <h3 class="font-weight-bold"></h3>
-                                        <h3 class="font-weight-bold"><i class=""> <%= render "shared/newaccount" %></i></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div id="content" class="bg-grey w-100">
+      <section class="bg-light py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 col-md-8">
+              <h1 class="font-weight-bold mb-0">
+                Bienvenido, <%= @business.user.email %>
+              </h1>
+              <p class="lead text-muted">
+                Este es el estado de cuenta de
+                <span><%= @business.name %></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-mix py-3">
+        <div class="container">
+          <div class="card rounded-0">
+            <div class="card-body">
+              <div class="row">
+                <% @business.accounts.each do |account| %>
+                <div class="info">
+                  <h6 class="text-muted"><%= account.name %></h6>
+                  <h3 class="font-weight-bold"><%= account.balance %></h3>
+                  <h3 class="font-weight-bold"><%= account.currency %></h3>
                 </div>
-              </section>
-
-              <section>
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-lg-8 my-3">
-                              <div class="card rounded-0">
-                                  <div class="card-header bg-light">
-                                    <h6 class="font-weight-bold mb-0">Transacciones</h6>
-                                    <h6 class="text-muted">Total $x.xxx.xx.xx.xx</h6>
-                                  </div>
-                                  <div class="card-body">
-                                    <table class="tabla">
-                                       <thead>
-                                        <tr>
-                                          <th>Fecha</th>
-                                          <th>Descripción</th>
-                                          <th>Categoría</th>
-                                          <th>Monto</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                         <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                          <td>01/01/2021</td>
-                                          <td>Comida</td>
-                                          <td>Alimentos</td>
-                                          <td>$100</td>
-                                        </tr>
-                                      </tbody>
-
-
-                                    </table>
-
-
-                                    </table>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 my-3">
-                            <div class="card rounded-0">
-                                <div class="card-header bg-light">
-                                    <h6 class="font-weight-bold mb-0">Lo último</h6>
-                                </div>
-                                <div class="card-body pt-2">
-                                    <div class="d-flex border-bottom py-2">
-                                        <div class="d-flex mr-3">
-                                          <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                        </div>
-                                        <div class="align-self-center">
-                                          <h6 class="d-inline-block mb-0">$250</h6><span class="badge badge-success ml-2">Ingreso</span>
-                                          <small class="d-block text-muted">Abono a cuenta Caja social</small>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex border-bottom py-2">
-                                        <div class="d-flex mr-3">
-                                          <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                        </div>
-                                        <div class="align-self-center">
-                                          <h6 class="d-inline-block mb-0">$250</h6><span class="badge badge-success ml-2">Ingreso</span>
-                                          <small class="d-block text-muted">Abono a nequi</small>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex border-bottom py-2">
-                                        <div class="d-flex mr-3">
-                                          <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                        </div>
-                                        <div class="align-self-center">
-                                          <h6 class="d-inline-block mb-0">$250</h6><span class="badge badge-danger ml-2">Egreso</span>
-                                          <small class="d-block text-muted">Pago de proveedor</small>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex border-bottom py-2">
-                                        <div class="d-flex mr-3">
-                                          <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                        </div>
-                                        <div class="align-self-center">
-                                          <h6 class="d-inline-block mb-0">$250</h6><span class="badge badge-danger ml-2">Egreso</span>
-                                          <small class="d-block text-muted">Pago de Servicios públicos</small>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex border-bottom py-2 mb-3">
-                                        <div class="d-flex mr-3">
-                                          <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                        </div>
-                                        <div class="align-self-center">
-                                          <h6 class="d-inline-block mb-0">$250</h6><span class="badge badge-success ml-2">Ingreso</span>
-                                          <small class="d-block text-muted">Abono Lulo Bank</small>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary w-100">Ver todas</button>
-                                </div>
-                            </div>
-                          </div>
-                      </div>
+                <% end %>
+              </div>
+              <div class="col-lg-3 col-md-6 d-flex my-3">
+                <div class="mx-auto">
+                  <h6 class="text-muted">Agregar nueva cuenta</h6>
+                  <h3 class="font-weight-bold"></h3>
+                  <h3 class="font-weight-bold">
+                    <i class=""> <%= render "shared/newaccount" %></i>
+                  </h3>
+                </div>
+              </div>
+              <% total = 0 %>
+              <% @business.accounts.each do |account| %>
+                <% total += account.balance %>
+              <% end %>
+              <div
+                class="info"
+                style="display: flex; justify-content: space-between">
+                <h6>Balance Total</h6>
+                <h6><%= total %></h6>
+                <h6><%= @business.accounts.first.currency %></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 my-3">
+              <div class="card rounded-0">
+                <div class="card-header bg-light">
+                  <h6 class="font-weight-bold mb-0">Transacciones</h6>
+                  <h6 class="text-muted">Total $x.xxx.xx.xx.xx</h6>
+                </div>
+                <div class="card-body">
+                  <table class="tabla"></table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 my-3">
+              <div class="card rounded-0">
+                <div class="card-header bg-light">
+                  <h6 class="font-weight-bold mb-0">Lo último</h6>
+                </div>
+                <div class="card-body pt-2">
+                  <div class="d-flex border-bottom py-2">
+                    <div class="d-flex mr-3">
+                      <h2 class="align-self-center mb-0">
+                        <i class="icon ion-md-pricetag"></i>
+                      </h2>
+                    </div>
+                    <div class="align-self-center">
+                      <h6 class="d-inline-block mb-0">$250</h6>
+                      <span class="badge badge-success ml-2">Ingreso</span>
+                      <small class="d-block text-muted"
+                        >Abono a cuenta Caja social</small
+                      >
+                    </div>
                   </div>
+                  <div class="d-flex border-bottom py-2">
+                    <div class="d-flex mr-3">
+                      <h2 class="align-self-center mb-0">
+                        <i class="icon ion-md-pricetag"></i>
+                      </h2>
+                    </div>
+                    <div class="align-self-center">
+                      <h6 class="d-inline-block mb-0">$250</h6>
+                      <span class="badge badge-success ml-2">Ingreso</span>
+                      <small class="d-block text-muted">Abono a nequi</small>
+                    </div>
+                  </div>
+                  <div class="d-flex border-bottom py-2">
+                    <div class="d-flex mr-3">
+                      <h2 class="align-self-center mb-0">
+                        <i class="icon ion-md-pricetag"></i>
+                      </h2>
+                    </div>
+                    <div class="align-self-center">
+                      <h6 class="d-inline-block mb-0">$250</h6>
+                      <span class="badge badge-danger ml-2">Egreso</span>
+                      <small class="d-block text-muted"
+                        >Pago de proveedor</small
+                      >
+                    </div>
+                  </div>
+                  <div class="d-flex border-bottom py-2">
+                    <div class="d-flex mr-3">
+                      <h2 class="align-self-center mb-0">
+                        <i class="icon ion-md-pricetag"></i>
+                      </h2>
+                    </div>
+                    <div class="align-self-center">
+                      <h6 class="d-inline-block mb-0">$250</h6>
+                      <span class="badge badge-danger ml-2">Egreso</span>
+                      <small class="d-block text-muted"
+                        >Pago de Servicios públicos</small
+                      >
+                    </div>
+                  </div>
+                  <div class="d-flex border-bottom py-2 mb-3">
+                    <div class="d-flex mr-3">
+                      <h2 class="align-self-center mb-0">
+                        <i class="icon ion-md-pricetag"></i>
+                      </h2>
+                    </div>
+                    <div class="align-self-center">
+                      <h6 class="d-inline-block mb-0">$250</h6>
+                      <span class="badge badge-success ml-2">Ingreso</span>
+                      <small class="d-block text-muted">Abono Lulo Bank</small>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary w-100">Ver todas</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

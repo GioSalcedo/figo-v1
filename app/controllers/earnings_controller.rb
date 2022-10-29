@@ -9,19 +9,17 @@ class EarningsController < ApplicationController
 
   def new
     @earning = Earning.new
-    @earning.account = Account.find(params[:account_id])
   end
 
   def create
     @earning = Earning.new(earning_params)
     @earning.account = Account.find(params[:account_id])
     if @earning.save
-      @account = @earning.account
-      @account.balance += @earning.balance
-      @account.save
-      redirect_to account_earnings_path(@account)
+      @earning.account.balance += @earning.balance
+      @earning.account.save
+      redirect_to account_path(@earning.account)
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -50,25 +48,3 @@ class EarningsController < ApplicationController
     params.require(:earning).permit(:account_id, :balance, :date, :currency, :category, :beneficiary, :note)
   end
 end
-
-
-# def create
-#   @transaction = Transaction.new(transaction_params)
-#   @transaction.user = current_user
-#   @transaction.category = Category.find(params[:transaction][:category_id])
-#   @account = Account.find(params[:transaction][:account_id])
-#   @transaction.account = @account
-#   if @transaction.save
-#     if @transaction.transaction_type == "expense"
-#       @account.amount -= @transaction.amount
-#       @account.save
-#       redirect_to transactions_path
-#     elsif @transaction.transaction_type == "income"
-#       @account.amount += @transaction.amount
-#       @account.save
-#       redirect_to transactions_path
-#     end
-#   else
-#     render :new, status: :unprocessable_entity
-#   end
-# end
