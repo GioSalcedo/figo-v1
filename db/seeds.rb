@@ -53,7 +53,7 @@ Account.create(
 )
 
  Earning.create(
-  banking_id: 1,
+  account_id: 1,
   balance: 100000,
   currency: "COP",
   category: "Salario",
@@ -63,7 +63,7 @@ Account.create(
  )
 
  Egress.create(
-  banking_id: 1,
+  account_id: 1,
   balance: 50000,
   currency: "COP",
   category: "Comida",
