@@ -9,7 +9,7 @@ class EgressesController < ApplicationController
 
   def new
     @egress = Egress.new
-    @egress.account = Account.find(params[:account_id])
+    @account = Account.find(params[:account_id])
   end
 
   def create
