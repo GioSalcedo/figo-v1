@@ -9,7 +9,9 @@
 User.create(
   email: "lewagon@lewagon.com",
   password: "123456",
-  password_confirmation: "123456"
+  password_confirmation: "123456",
+  first_name: "Fanny",
+  last_name: "Vidal"
 )
 
 Business.create(
@@ -51,31 +53,31 @@ Account.create(
   balance: 500000,
   currency: "COP"
 )
-
+50.times do
  Earning.create(
   account_id: 1,
-  balance: 100000,
+  balance: Faker::Number.within(range: 10000..10000000),
   currency: "COP",
   category: "Salario",
   date: Date.today,
-  beneficiary: "Lewagon",
+  beneficiary: "Yo",
   note: "Pago de salario"
  )
 
  Egress.create(
   account_id: 1,
-  balance: 50000,
+  balance: Faker::Number.within(range: 10000..10000000),
   currency: "COP",
   category: "Comida",
   date: Date.today,
-  beneficiary: "Comida",
+  beneficiary: Faker::Name.name,
   note: "Pago de comida"
  )
-
+end
   Debt.create(
     business_id: 1,
     name: "Deuda con el banco",
-    balance: 50000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de deuda"
@@ -84,7 +86,7 @@ Account.create(
   Debt.create(
     business_id: 1,
     name: "Deuda servicios publicos",
-    balance: 800000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de deuda"
@@ -93,7 +95,7 @@ Account.create(
   Debt.create(
     business_id: 1,
     name: "Deuda de viaje",
-    balance: 800000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de deuda"
@@ -102,7 +104,7 @@ Account.create(
   Debt.create(
     business_id: 1,
     name: "Deuda  de pago de nomina",
-    balance: 1000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de deuda"
@@ -111,7 +113,7 @@ Account.create(
   Debt.create(
     business_id: 1,
     name: "Deuda credito en Exito",
-    balance: 7000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de deuda"
@@ -120,7 +122,7 @@ Account.create(
   Debt.create(
     business_id: 1,
     name: "Deudas con el provedor ",
-    balance: 1000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de deuda"
@@ -129,7 +131,7 @@ Account.create(
   Saving.create(
     business_id: 1,
     name: "Ahorro para el negocio",
-    balance: 50000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de ahorro"
@@ -138,7 +140,7 @@ Account.create(
   Saving.create(
     business_id: 1,
     name: "Aporte a salud y pension",
-    balance: 1000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de salud y pension"
@@ -147,7 +149,7 @@ Account.create(
   Saving.create(
     business_id: 1,
     name: "Compra de maquinarias",
-    balance: 500000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Compra de enfriadores"
@@ -155,7 +157,7 @@ Account.create(
   Saving.create(
     business_id: 1,
     name: "Ahorro para un viaje de negocio",
-    balance: 2000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "viaje a Santa Marta"
@@ -163,7 +165,7 @@ Account.create(
   Saving.create(
     business_id: 1,
     name: "Compra de materiales",
-    balance: 100000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "material para hacer el producto"
@@ -172,7 +174,7 @@ Account.create(
   Saving.create(
     business_id: 1,
     name: "Ahorra para paga de nomina",
-    balance: 800000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de salario"
@@ -180,7 +182,7 @@ Account.create(
   Budget.create(
     business_id: 1,
     name: "Presupuesto para el negocio",
-    balance: 50000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
@@ -189,7 +191,7 @@ Account.create(
   Budget.create(
     business_id: 1,
     name: "Presupuesto para nomina",
-    balance: 8000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
@@ -198,7 +200,7 @@ Account.create(
   Budget.create(
     business_id: 1,
     name: "Presupuesto para el arriendo",
-    balance: 2000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
@@ -207,7 +209,7 @@ Account.create(
   Budget.create(
     business_id: 1,
     name: "Presupuesto para los impuestos",
-    balance: 4000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
@@ -216,7 +218,7 @@ Account.create(
   Budget.create(
     business_id: 1,
     name: "Presupuesto para viajes de trabajos",
-    balance: 4000000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
@@ -225,14 +227,8 @@ Account.create(
   Budget.create(
     business_id: 1,
     name: "Presupuesto para vacaciones",
-    balance: 900000,
+    balance: Faker::Number.within(range: 10000..10000000),
     currency: "COP",
     date: Date.today,
     note: "Pago de presupuesto"
   )
-
-Banking.create(
-  earning_id: 1,
-  egress_id: 1,
-  user_id: 1
-)
