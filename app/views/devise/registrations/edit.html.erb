@@ -9,7 +9,9 @@
 <body>
 <div class="wrapper">
     <div class="left">
-        <h4>Juan</h4>
+        <img src="//images/logo.png"
+        alt="user" width="100">
+        <h4>Juan David</h4>
          <p>UI Developer</p>
     </div>
     <div class="right">
@@ -66,14 +68,14 @@
             </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Update" %>
+              <%= f.button :submit, "Actualizar" %>
             </div>
           <% end %>
-          <h3>Cancel my account</h3>
+          <h3>Cancelar mi cuenta</h3>
 
-          <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          <p>🤨Eres infeliz con FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-          <%= link_to "Back", :back %>
+          <%= link_to "Volver", :back %>
 
         </div>
     </div>
