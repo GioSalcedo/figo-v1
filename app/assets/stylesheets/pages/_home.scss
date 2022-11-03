@@ -1,16 +1,16 @@
 // Specific CSS for your home-page
 @import url("https://fonts.googleapis.com/css2?family=Open-sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
-  --primary-color: #1fbabf;
-  --secondary-color: #0b759d;
-  --tertiary-color: #60d3aa;
-  --quaternary-color: #9cee8c;
+  --primary-color: #6727f2;
+  --secondary-color: #5058f8;
+  --tertiary-color: #6b7ff2;
+  --quaternary-color: #809df2;
+  --fifth-color: #3dd9c9;
   --primary-font: "Open Sans", sans-serif;
   --secondary-font: "League Spartan", sans-serif;
-  --tertiary-font: "Josefin Sans", sans-serif;
+
 }
 
 * {
@@ -18,39 +18,21 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
+body {
+  background-color: #f3f3f3;
+}
 
 .wrapper {
-body{
-   background-color: #56ada9;
-}
-.grid-container{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-  justify-content: space-between;
-}
-.grid-wrapper{
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-.wrapper{
-  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-  margin: 0px;
-  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
-  margin: 50px;
-  text-align: left;
-}
-
-
-.sesion{
-  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
 }
 
 .wrapper .left {
@@ -271,6 +253,8 @@ header .container {
   transition: 0.3s;
 }
 
+
+
 .btn:hover {
   background-color: var(--hoverColor);
   transform: scale(1) !important;
@@ -428,6 +412,7 @@ header .container {
   grid-gap: 50px;
 }
 
+
 .about .container img {
   width: 110%;
   height: 110%;
@@ -442,6 +427,8 @@ header .container {
   grid-gap: 50px;
 }
 
+
+
 .big-title-center {
   font-size: 1.4rem;
   color: var(--darkOne);
@@ -453,6 +440,7 @@ header .container {
 .services-wrapper .service {
   text-align: center;
 }
+
 
 .newsletter {
   padding: 50px 100px;
@@ -562,8 +550,9 @@ header .container {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0.5rem 0 0.5rem;
-  color: var(--darkOne);
+  color: var(--darkOne)
 }
+
 
 .reviews-container .box p {
   font-style: italic;
@@ -574,20 +563,13 @@ header .container {
   color: var(--darkOne);
 }
 
+
 .gradient {
-  background-image: linear-gradient(
-    90deg,
-    #0b759d,
-    #1fbabf,
-    #64bcf4,
-    #1fbabf,
-    #5bacdf,
-    #0b759d,
-    #1fbabf
-  );
+  background-image: linear-gradient(90deg, #0b759d, #1fbabf, #64bcf4, #1fbabf, #5bacdf, #0b759d, #1fbabf);
   background-size: 600% 100%;
   animation: cambiar 2s linear infinite;
 }
+
 
 @keyframes cambiar {
   0% {
@@ -607,6 +589,7 @@ header .container {
   margin-top: 2rem;
   justify-content: center;
 }
+
 .emoji {
   margin-top: auto;
 }
@@ -628,7 +611,7 @@ header .container {
 }
 
 .fondo .titulo span {
-  font-size: 4rem;
+  font-size: 4.0rem;
   color: #0b759d;
   line-height: 1.4;
   font-family: League Spartan;
@@ -639,6 +622,7 @@ header .container {
 .fondo .titulo .h2 {
   margin: 50px;
 }
+
 
 a:hover {
   text-decoration: none;
@@ -699,12 +683,7 @@ a:hover {
   border-right: 1px solid var(--grey);
 }
 
-.logo h4 {
-  font-family: "League Spartan", sans-serif;
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--primary);
-}
+
 
 .tabla {
   background: #fff;
@@ -717,11 +696,12 @@ a:hover {
 }
 
 span {
-  font-family: "League Spartan", sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 900;
   font-size: 1.5rem;
   color: var(--mainColor);
 }
+
 
 @media (max-width: 768px) {
   #sidebar-container {
