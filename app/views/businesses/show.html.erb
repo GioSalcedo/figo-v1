@@ -5,10 +5,14 @@
             <div class="card-body">
               <div class="row">
                 <% @business.accounts.each do |account| %>
+                <div class="col-lg-3 col-md-6 d-flex my-3">
+                <div class="mx-auto">
                 <div class="info">
                   <h6 class="text-muted"><%= account.name %></h6>
-                  <h3 class="font-weight-bold"><%= account.balance %></h3>
-                  <h3 class="font-weight-bold"><%= account.currency %></h3>
+                  <h3 class="font-weight-bold">$<%= account.balance %></h3>
+                  <%# <h3 class="font-weight-bold"><%= account.currency %></h3>
+                </div>
+                </div>
                 </div>
                 <% end %>
               </div>
@@ -25,10 +29,9 @@
               total += account.balance %> <% end %>
               <div
                 class="info"
-                style="display: flex; justify-content: space-between"
+                style="display: flex; justify-content: flex-start"
               >
-                <h6>Balance Total</h6>
-                <h6><%= total %></h6>
+                <h6>Balance Total $<%= total %></h6>
               </div>
             </div>
           </div>
@@ -44,7 +47,24 @@
                   <h6 class="text-muted">Total $x.xxx.xx.xx.xx</h6>
                 </div>
                 <div class="card-body">
-                  <table class="tabla"></table>
+                  <table class="tabla">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th>Monto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01/01/2022</td>
+                        <td>Salario</td>
+                        <td>esa cosa</td>
+                        <td>500000</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
