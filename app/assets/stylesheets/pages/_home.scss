@@ -1,16 +1,16 @@
 // Specific CSS for your home-page
 @import url("https://fonts.googleapis.com/css2?family=Open-sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
-  --primary-color: #1fbabf;
-  --secondary-color: #0b759d;
-  --tertiary-color: #60d3aa;
-  --quaternary-color: #9cee8c;
+  --primary-color: #6727f2;
+  --secondary-color: #5058f8;
+  --tertiary-color: #6b7ff2;
+  --quaternary-color: #809df2;
+  --fifth-color: #3dd9c9;
   --primary-font: "Open Sans", sans-serif;
   --secondary-font: "League Spartan", sans-serif;
-  --tertiary-font: "Josefin Sans", sans-serif;
+
 }
 
 *{
@@ -561,11 +561,12 @@ header .container {
 }
 
 
-.gradient{
+.gradient {
   background-image: linear-gradient(90deg, #0b759d, #1fbabf, #64bcf4, #1fbabf, #5bacdf, #0b759d, #1fbabf);
   background-size: 600% 100%;
   animation: cambiar 2s linear infinite;
   }
+
 
 
 @keyframes cambiar {
@@ -586,7 +587,8 @@ header .container {
   margin-top: 2rem;
   justify-content: center;
 }
-.emoji{
+
+.emoji {
   margin-top: auto;
 }
 
@@ -606,7 +608,7 @@ header .container {
   margin: 36px;
 }
 
-.fondo .titulo span{
+.fondo .titulo span {
   font-size: 4.0rem;
   color: #0b759d;
   line-height: 1.4;
@@ -671,13 +673,6 @@ a:hover {
     border-right: 1px solid var(--grey);
 }
 
-.logo h4{
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: var(--primary);
-}
-
 .tabla {
     background: #fff;
     width: 100%;
@@ -688,11 +683,11 @@ a:hover {
     transition: all 300ms ease;
 }
 
-span{
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: var(--mainColor);
+span {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--mainColor);
 }
 
 
