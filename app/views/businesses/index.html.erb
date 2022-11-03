@@ -1,6 +1,4 @@
-<h1>Businesses#index</h1>
-
-<%= link_to "New Empresa", new_business_path %>
+  <%= link_to "Nueva empresa", new_business_path, class:"btn btn-secundary mb-2" %>
 
   <% @businesses.each do |business| %>
     <div class="card">
@@ -9,6 +7,3 @@
       </div>
     </div>
   <% end %>
-
-  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-income" >
-  </button>

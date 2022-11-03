@@ -1,5 +1,5 @@
 class Budget < ApplicationRecord
   belongs_to :business
-  validate_presence_of :name, :balance, :currency, :date
-  validate_uniqueness_of :name
+  validates_presence_of :name, :balance, :currency, :date
+  validates_uniqueness_of :name
 end
