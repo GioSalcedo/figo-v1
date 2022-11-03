@@ -21,19 +21,36 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-body {
-  background-color: #f3f3f3;
-}
 
 .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1000px;
-  display: flex;
+body{
+   background-color: #56ada9;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+  justify-content: space-between;
+}
+.grid-wrapper{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.wrapper{
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   margin: 0px;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+  margin: 50px;
+  text-align: left;
+}
+
+
+.sesion{
+  background-color: white;
 }
 
 .wrapper .left {
