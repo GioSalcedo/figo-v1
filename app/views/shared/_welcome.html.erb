@@ -7,9 +7,7 @@
               </h1>
               <p class="lead text-light">
                 Este es el estado de cuenta de
-                <% current_user.businesses.each do |business| %>
-                  <span><%= business.name %></span>
-                <% end %>
+                  <span><%= @business.name %></span>
               </p>
             </div>
           </div>
