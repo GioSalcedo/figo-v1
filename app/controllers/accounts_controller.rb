@@ -16,7 +16,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
     @account.business_id = current_user.id
     if @account.save
-      redirect_to @account
+      redirect_to @account, notice: 'La cuenta ha sido creada con éxito.'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update(account_params)
-      redirect_to @account
+      redirect_to @account, notice: 'La cuenta ha sido actualizada con éxito.'
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class AccountsController < ApplicationController
 
   def destroy
     @account.destroy
-    redirect_to accounts_path
+    redirect_to accounts_path, notice: 'La cuenta ha sido eliminada con éxito.'
   end
 
   private

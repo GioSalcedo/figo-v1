@@ -1,25 +1,42 @@
-<div class="d-flex" id="content-wrapper">
-  <div id="sidebar-container" class="bg-primary">
-      <div class="logo">
-          <h4 class="text-light font-weight-bold mb-0">FIGO</h4>
+<div class="" id="content-wrapper">
+  <div class="bg-primary p-4 text-light text-align-center fs-1 ">
+    <h1 class="">FIGO</h1>
+  </div>
+  <div id="sidebar-container" class=" m-0">
+      <div class="menu container-fluid m-0 p-0">
+        <ul class="navbar-nav me-auto">
+          <li>
+            <%= link_to "   Mis empresas", businesses_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-apps w-100" %>
+          </li>
+          <li>
+            <%= link_to "   Metas", savings_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-stats" %>
+          </a>
+          </li>
+          <li>
+            <%= link_to "   Presupuesto", budgets_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-pie lead mr-2" %>
+          </a>
+          </li>
+          <li>
+            <%= link_to "   Deudas", debts_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+          </a>
+          </li>
+        </ul>
       </div>
-      <div class="menu">
-          <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-              Panel de control</a>
-
-          <a href="http://127.0.0.1:3000/businesses" class="d-block text-light p-3 border-0"><i class="icon ion-md-add lead mr-2"></i>
-              Registros</a>
-
-          <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
-              Metas</a>
-          <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-pie lead mr-2"></i>
-              Presupuesto</a>
-          <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-cash lead mr-2"></i>
-              Deudas</a>
-          <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
-              Configuración</a>
-          <a  class="d-block text-light p-3 border-0"> <i class="icon ion-md-log-out lead mr-2"></i>
-              Cerrar Sesión</a>
-      </div>
+          <li class="mt-5">
+            <%= button_to "   Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn btn-link d-block p-3 border-0 lead mr-2 icon ion-md-log-out lead " %>
+          </a>
+          </li>
   </div>
 </div>
+
+          <%# <li>
+            <a href="http://127.0.0.1:3000/businesses" class="d-block text-light p-3 border-0">
+            <i class="icon ion-md-add lead mr-2">Registros</i>
+          </a>
+          </li> %>
+
+          <%# <li>
+            <a href="#" class="d-block text-light p-3 border-0">
+            <i class="icon ion-md-settings lead mr-2"> Configuración</i>
+          </a>
+          </li> %>
