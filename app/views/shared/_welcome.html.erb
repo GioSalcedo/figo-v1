@@ -2,15 +2,17 @@
         <div class="container-fluid">
           <div class="row logo">
             <div class="col-lg-9 col-md-6 ">
+              <% if current_user %>
               <h1 class="font-weight-bold mb-0 text-light">
                 Bienvenido, <%= current_user.first_name %> <%= current_user.last_name %>
               </h1>
+                <% end %>
+                <% if @business %>
               <p class="lead text-light">
                 Este es el estado de cuenta de
-                <% current_user.businesses.each do |business| %>
-                  <span><%= business.name %></span>
-                <% end %>
+                  <span><%= @business.name %></span>
               </p>
+                <% end %>
             </div>
           </div>
         </div>

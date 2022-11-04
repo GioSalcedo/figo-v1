@@ -9,10 +9,8 @@
 <body>
   <div class="wrapper">
       <div class="left">
-          <%= current_user.avatar %>
-          <p>
-          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-
+          <%= cl_image_tag(current_user.avatar.key) %>
+            <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
       </div>
       <div class="right">
           <div class="info">
