@@ -28,14 +28,7 @@ body{
 .container-fluid{
   margin: 0 !important;
   padding: 0 !important;
-  overflow: hidden !important;
-}
-
-.container {
-  height: 100vh !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  overflow: hidden;
 }
 
 .wrapper{
@@ -587,7 +580,6 @@ header .container {
   background-image: linear-gradient(90deg, #0b759d, #1fbabf, #64bcf4, #1fbabf, #5bacdf, #0b759d, #1fbabf);
   background-size: 600% 100%;
   animation: cambiar 2s linear infinite;
-  height: 100%;
   }
 
 
@@ -602,22 +594,14 @@ header .container {
   }
 }
 
-html, body{
-  height:100vh;
-  margin:0;
-}
-
 .fondo {
-  padding: 300px 300px;
+  padding: 300px 300px 300px 300px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   justify-content: center;
   width: 100vw;
   overflow: hidden !important;
-}
-
-.fondo-1{
 }
 
 .emoji {
