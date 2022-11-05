@@ -62,7 +62,7 @@
                         <td><%= earning.date %></td>
                         <td><%= earning.note %></td>
                         <td><%= earning.category %></td>
-                        <td><%= earning.balance %></td>
+                        <td>$<%= earning.balance %></td>
                       </tr>
                     </tbody>
                   <% end %>
@@ -74,7 +74,7 @@
                         <td><%= earning.date %></td>
                         <td><%= earning.note %></td>
                         <td><%= earning.category %></td>
-                        <td><%= earning.balance %></td>
+                        <td>$<%= earning.balance %></td>
                       </tr>
                     </tbody>
                   <% end %>
@@ -91,7 +91,7 @@
                   <h6 class="font-weight-bold mb-0">Lo último</h6>
                 </div>
                   <% @business.accounts.each do |account| %>
-                    <% account.earnings.last(5).each do |earning| %>
+                    <% account.earnings.last(3).each do |earning| %>
                 <div class="card-body pt-2">
                   <div class="d-flex border-bottom py-2">
                     <div class="d-flex mr-3">
@@ -111,7 +111,7 @@
                   <% end %>
 
                   <% @business.accounts.each do |account| %>
-                    <% account.egresses.last(5).each do |earning| %>
+                    <% account.egresses.last(3).each do |earning| %>
                 <div class="card-body pt-2">
                   <div class="d-flex border-bottom py-2">
                     <div class="d-flex mr-3">

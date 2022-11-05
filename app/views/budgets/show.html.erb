@@ -1,16 +1,14 @@
-<h1>Budgets#show</h1>
+<h1>Presupuesto</h1>
 
-<h1>Savings#show</h1>
+
     <div class="card">
       <div class="card-body">
-        <h5><%= @budget.business.name %></h5>
-        <p><%= @budget.name %></p>
-        <p><%= @budget.date %></p>
-        <p><%= @budget.balance %></p>
-        <p><%= @budget.currency %></p>
-        <p><%= @budget.note %></p>
+        <h5><%= @budget.name %></h5>
+        <p>Fecha de creación: <%= @budget.date %></p>
+        <p>Cantidad presupuestada: $<%= @budget.balance %></p>
+        <p>¿Para que necesito este presupuesto?: <%= @budget.note %></p>
       </div>
     </div>
-<%= link_to "Regresar", budgets_path %>
-<%= link_to "Editar", edit_budget_path %>
-<%= button_to "", budget_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+<%= link_to "Regresar", budgets_path, class:"btn btn-info" %>
+<%= link_to "Editar", edit_budget_path, class:"btn btn-info" %>
+<%= button_to "Eliminar", budget_path, method: :delete, data: { confirm: "¿estás seguro?" }, class:"btn btn-danger" %>
