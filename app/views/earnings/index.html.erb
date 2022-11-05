@@ -1,14 +1,21 @@
-<h1>Entradas de Dinero</h1>
 
-<%= link_to 'New ingreso', new_banking_earning_path %>
+  <div class="container">
+    <% current_user.businesses.each do |business| %>
+      <% business.accounts.each do |account| %>
+        <% account.earnings.each do |earning| %>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                  <%= earning.balance %>
+                  <%= earning.currency %>
+                  <%= earning.date %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
-  <% @earnings.each do |earning| %>
-    <div class="card">
-      <div class="card-body">
-        <%= earning.balance%>
-        <%= earning.currency%>
-        <%= earning.date%>
-        <%= link_to "Ver detalles", banking_earning_path %>
-      </div>
-    </div>
-  <% end %>

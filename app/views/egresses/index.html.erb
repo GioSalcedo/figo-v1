@@ -1,16 +1,20 @@
-<h1>Salidas de Dinero</h1>
 
-<div class="row">
-  <% @egresses.each do |egress| %>
-    <div class="col-lg-3 col-md-6 d-flex my-3">
-      <div class="card">
-        <div class="card-body">}
-          <%= egress.account_id%>
-          <%= egress.balance%>
-          <%= egress.note%>
-          <%= link_to egress.note, egress %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+  <div class="container">
+    <% current_user.businesses.each do |business| %>
+      <% business.accounts.each do |account| %>
+        <% account.egresses.each do |egress| %>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                  <%= egress.balance %>
+                  <%= egress.currency %>
+                  <%= egress.date %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
