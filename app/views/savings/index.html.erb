@@ -1,9 +1,14 @@
-<h1>Savings#index</h1>
+<h1>Metas</h1>
 
+<div class="row">
   <% @savings.each do |saving| %>
-    <div class="card">
-      <div class="card-body">
+    <div class="col-lg-3 col-md-6 d-flex my-3">
+      <div class="card">
+        <div class="card-body">
         <%= link_to saving.name, saving %>
+        <p class="card-text">En esta tarjeta encuentras la información del <%= saving.name %>, si necesitas saber más, puedes hacer click aquí.</p>
+        </div>
       </div>
     </div>
-  <% end %>
+   <% end %>
+</div>
