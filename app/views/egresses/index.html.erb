@@ -1,2 +1,16 @@
-<h1>Egresses#index</h1>
-<p>Find me in app/views/egresses/index.html.erb</p>
+<h1>Salidas de Dinero</h1>
+
+<div class="row">
+  <% @egresses.each do |egress| %>
+    <div class="col-lg-3 col-md-6 d-flex my-3">
+      <div class="card">
+        <div class="card-body">}
+          <%= egress.account_id%>
+          <%= egress.balance%>
+          <%= egress.note%>
+          <%= link_to egress.note, egress %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
