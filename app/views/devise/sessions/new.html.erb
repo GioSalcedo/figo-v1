@@ -9,14 +9,15 @@
     <div class="formulario">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
-          <%= f.input :email,
+          <%= f.input :email, label: "Correo Electrónico",
                       required: false,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
+          <%= f.input :password, label: "Contraseña",
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: "Recuerdame",
+          as: :boolean if devise_mapping.rememberable? %>
         </div>
 
       <div class="form-actions">

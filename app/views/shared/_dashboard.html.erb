@@ -1,10 +1,13 @@
 <div class="d-flex" id="content-wrapper">
   <!-- Sidebar -->
+  <% if devise_controller? %>
+  <% else %>
   <%= render "shared/aside" %>
+  <% end %>
   <!-- Page Content -->
-  <div class="container-fluid p-0 m-0">
+  <div class="container-fluid" >
       <%= render "shared/welcome" %>
-      <div class="container-fluid p-4">
+      <div class="container-fluid">
         <%= yield %>
       </div>
 </div>
