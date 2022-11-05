@@ -9,12 +9,11 @@ class EgressesController < ApplicationController
 
   def new
     @egress = Egress.new
-    @account = Account.find(params[:account_id])
+    @accounts = current_user.accounts
   end
 
   def create
     @egress = Egress.new(egress_params)
-    @egress.account = Account.find(params[:account_id])
     if @egress.save
       new_balance = @egress.account.balance - @egress.balance
       @egress.account.update(balance: new_balance)
