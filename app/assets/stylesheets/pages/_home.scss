@@ -25,12 +25,40 @@ body{
    background-color: #f3f3f3;
 }
 
+
+.container-fluid{
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.container {
+  height: 100vh !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+=======
 .wrapper{
   top: 50%;
   left: 50%;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
 }
+
+
+.titulo{
+  position: relative;
+}
+
+
+.text{
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+=======
 
 .wrapper .left{
   width: 35%;
@@ -179,14 +207,14 @@ a {
   justify-content: space-between;
 }
 
-.container {
-  position: relative;
-  max-width: 81rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 3rem;
-  z-index: 10;
-}
+// .container {
+//   position: relative;
+//   max-width: 81rem;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0 3rem;
+//   z-index: 10;
+// }
 
 header {
   position: relative;
@@ -580,13 +608,20 @@ header .container {
 }
 
 .fondo {
-  padding: 300px 300px;
+  padding: 500px 250px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  justify-content: center;
+  width: 100vw;
+}
+
+
   gap: 1rem;
   margin-top: 2rem;
   justify-content: center;
 }
+
 
 .emoji {
   margin-top: auto;
