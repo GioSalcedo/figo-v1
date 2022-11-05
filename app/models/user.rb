@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :debts, through: :businesses
   has_many :budgets, through: :businesses
   has_many :accounts, through: :businesses
+  has_many :earnings, through: :bankings
+  has_many :egresses, through: :bankings
   has_one_attached :avatar
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

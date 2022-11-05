@@ -8,7 +8,7 @@
           <li>
             <%= link_to "   Mis empresas", businesses_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-apps w-100" %>
           </li>
-
+          <% if params["controller"] == "businesses" && params["action"] == "show" %>
           <li>
             <%= link_to "   Metas", savings_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-stats" %>
           </li>
@@ -24,7 +24,7 @@
           <li>
             <%= link_to "   Agregar Egreso", new_egress_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
           </li>
-          <% if params["controller"] == "businesses" && params["action"] == "show" %>
+
           <li>
             <%= link_to "   Agregar Transferencia", new_business_banking_path(@business), class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
           </li>

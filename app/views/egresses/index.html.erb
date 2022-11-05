@@ -1,2 +1,19 @@
-<h1>Egresses#index</h1>
-<p>Find me in app/views/egresses/index.html.erb</p>
+  <div class="container">
+    <% current_user.businesses.each do |business| %>
+      <% business.accounts.each do |account| %>
+        <% account.egresses.each do |egress| %>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                  <%= egress.balance %>
+                  <%= egress.currency %>
+                  <%= egress.date %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
