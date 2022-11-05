@@ -1,28 +1,26 @@
 <div class="gradient">
   <div class="fondo">
     <div class="titulo">
-      <div class="text">
       <h1>🏦Inicia la aventura🏦</h1>
       <span>FIGO</span>
       <h2>Registrate aquí</h2>
-      </div>
     </div>
 <div class="formulario">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, required: true, autofocus: true, label: "Primer Nombre"%>
-    <%= f.input :last_name, required: true, label: "Apellido" %>
-    <%= f.input :email, label: "Correo Electrónico",
+    <%= f.input :first_name, required: true, autofocus: true %>
+    <%= f.input :last_name, required: true %>
+    <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :password, label: "Contraseña",
+    <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation, label: "Confirma Contraseña",
+    <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :avatar, as: :file %>
