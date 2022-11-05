@@ -1,9 +1,18 @@
-<h1>Budgets#index</h1>
+<h1>Presupuestos</h1>
 
+
+  <div class="row">
   <% @budgets.each do |budget| %>
-    <div class="card">
-      <div class="card-body">
-        <%= link_to budget.name, budget %>
-      </div>
-    </div>
-  <% end %>
+    <div class="col-lg-3 col-md-6 d-flex my-3">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to budget.name, budget %></h5>
+
+    <p class="card-text">En esta tarjeta encuentras la información del <%= budget.name %> si necesitas mas información, entra aquí.</p>
+
+  </div>
+</div>
+</div>
+<% end %>
+
+</div>
