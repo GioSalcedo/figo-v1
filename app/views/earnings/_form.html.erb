@@ -1,8 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <%= simple_form_for [@account, @earning]  do |f| %>
+    <%= simple_form_for @earning  do |f| %>
+      <%= f.association :account, collection: current_user.accounts %>
       <%= f.input :balance %>
-      <%= f.input :currency, as: :radio_buttons, collection:["COP","USD"] %>
+      <%= f.input :currency, as: :radio_buttons, collection:["COP"] %>
       <%= f.input :category %>
       <%= f.input :date, as: :date, order: [:day, :month, :year]%>
       <%= f.input :beneficiary %>

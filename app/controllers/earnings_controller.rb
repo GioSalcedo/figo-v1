@@ -9,12 +9,11 @@ class EarningsController < ApplicationController
 
   def new
     @earning = Earning.new
-    @account = Account.find(params[:account_id])
+    @accounts = current_user.accounts
   end
 
   def create
     @earning = Earning.new(earning_params)
-    @earning.account = Account.find(params[:account_id])
     if @earning.save
       new_balance = @earning.account.balance + @earning.balance
       @earning.account.update(balance: new_balance)

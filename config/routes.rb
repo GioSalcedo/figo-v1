@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: 'registrations' }
   root to: 'pages#home'
 
   resources :businesses do
@@ -8,11 +8,9 @@ Rails.application.routes.draw do
     resources :budgets, only: %i[new create]
     resources :bankings, only: %i[new create]
   end
-
-  resources :accounts do
-    resources :earnings
-    resources :egresses
-  end
+  resources :earnings
+  resources :egresses
+  resources :accounts
 
   resources :bankings, except: %i[new create]
 

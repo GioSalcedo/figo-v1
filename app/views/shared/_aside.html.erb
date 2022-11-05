@@ -8,18 +8,26 @@
           <li>
             <%= link_to "   Mis empresas", businesses_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-apps w-100" %>
           </li>
+          <% if @business.present? %>
           <li>
             <%= link_to "   Metas", savings_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-stats" %>
-          </a>
           </li>
           <li>
             <%= link_to "   Presupuesto", budgets_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-pie lead mr-2" %>
-          </a>
           </li>
           <li>
             <%= link_to "   Deudas", debts_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
-          </a>
           </li>
+          <li>
+              <%= link_to "   Agregar Ingreso", new_earning_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+          </li>
+          <li>
+            <%= link_to "   Agregar Egreso", new_egress_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+          </li>
+          <li>
+            <%= link_to "   Agregar Transferencia", new_business_banking_path(@business), class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+          </li>
+          <% end %>
         </ul>
       </div>
           <li class="mt-5">
@@ -28,7 +36,6 @@
           </li>
   </div>
 </div>
-
 
           <%# <li>
             <a href="http://127.0.0.1:3000/businesses" class="d-block text-light p-3 border-0">
