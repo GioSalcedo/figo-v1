@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :egresses
   resources :accounts
 
-  resources :bankings, except: %i[new create]
+  resources :bankings
 
   resources :savings, except: %i[new create]
   resources :debts, except: %i[new create]
