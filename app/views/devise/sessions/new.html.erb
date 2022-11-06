@@ -1,4 +1,5 @@
 <div class="gradient">
+  <div class="background">
   <div class="fondo">
     <div class="titulo">
       <h1>Bienvenido a</h1>
@@ -9,23 +10,24 @@
     <div class="formulario">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
-          <%= f.input :email,
+          <%= f.input :email, label: "Correo electrónico",
                       required: false,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
+          <%= f.input :password, label: "Contraseña",
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: "Recuerdame en este equipo", as: :boolean if devise_mapping.rememberable? %>
         </div>
 
       <div class="form-actions">
         <%= f.button :submit, "Inicia Sesión" %>
       </div>
       <% end %>
-
+    <div class="devise-links">
       <%= render "devise/shared/links" %>
-
+    </div>
     </div>
   </div>
+</div>
 </div>

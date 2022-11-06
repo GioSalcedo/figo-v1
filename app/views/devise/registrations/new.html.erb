@@ -1,8 +1,15 @@
 <div class="gradient">
   <div class="fondo">
     <div class="titulo">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <h1>🏦Inicia la aventura🏦</h1>
       <span>FIGO</span>
+      <br>
+      <br>
       <h2>Registrate aquí</h2>
     </div>
 <div class="formulario">
@@ -10,27 +17,33 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, required: true, autofocus: true %>
-    <%= f.input :last_name, required: true %>
+    <%= f.input :first_name, label: "Nombre", required: true, autofocus: true %>
+    <%= f.input :last_name, label: "Apellidos",  required: true %>
     <%= f.input :email,
+                label: "Correo electrónico",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
+                label: "Contraseña",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} caracteres minimo" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: "Confirma tu contraseña",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :avatar, as: :file %>
+    <%= f.input :avatar, label:"Imágen de perfil", as: :file %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Registrate" %>
   </div>
 <% end %>
+   <div class="devise-links">
 <%= render "devise/shared/links" %>
+</div>
   </div>
   </div>
 </div>
+
