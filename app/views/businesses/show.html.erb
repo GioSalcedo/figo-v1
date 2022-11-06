@@ -9,7 +9,7 @@
                 <div class="mx-auto">
                 <div class="info">
                   <h6 class="text-muted"><%= account.name.split("-")[0] %></h6>
-                  <h3 class="font-weight-bold">$<%= account.balance %></h3>
+                  <h3 class="font-weight-bold"><%= account.balance %> COP</h3>
                   <%# <h3 class="font-weight-bold"><%= account.currency %></h3>
                 </div>
                 </div>
@@ -62,19 +62,19 @@
                         <td><%= earning.date %></td>
                         <td><%= earning.note %></td>
                         <td><%= earning.category %></td>
-                        <td>$<%= earning.balance %></td>
+                        <td><%= earning.balance %> COP</td>
                       </tr>
                     </tbody>
                   <% end %>
                   <% end %>
-                    <% @business.accounts.each do |account| %>
-                    <% account.egresses.last(5).each do |earning| %>
+                  <% @business.accounts.each do |account| %>
+                  <% account.egresses.last(5).each do |egress| %>
                     <tbody>
                       <tr>
-                        <td><%= earning.date %></td>
-                        <td><%= earning.note %></td>
-                        <td><%= earning.category %></td>
-                        <td>$<%= earning.balance %></td>
+                        <td><%= egress.date %></td>
+                        <td><%= egress.note %></td>
+                        <td><%= egress.category %></td>
+                        <td>- <%= egress.balance %> COP</td>
                       </tr>
                     </tbody>
                   <% end %>
@@ -82,8 +82,6 @@
                   </table>
                 </div>
               </div>
-
-
             </div>
             <div class="col-lg-4 my-3">
               <div class="card rounded-0">
@@ -100,7 +98,7 @@
                       </h2>
                     </div>
                     <div class="align-self-center">
-                      <h6 class="d-inline-block mb-0"><%= earning.balance %></h6>
+                      <h6 class="d-inline-block mb-0"><%= earning.balance %> COP</h6>
                       <span class="badge badge-success ml-2">Ingreso</span>
                       <small class="d-block text-muted"><%= earning.note %></small>
                       <small class="d-block text-muted"><%= account.name %></small>
@@ -109,24 +107,23 @@
                 </div>
                     <% end %>
                   <% end %>
-
                   <% @business.accounts.each do |account| %>
-                    <% account.egresses.last(3).each do |earning| %>
-                <div class="card-body pt-2">
-                  <div class="d-flex border-bottom py-2">
-                    <div class="d-flex mr-3">
-                      <h2 class="align-self-center mb-0">
-                        <i class="icon ion-md-pricetag"></i>
-                      </h2>
-                    </div>
-                    <div class="align-self-center">
-                      <h6 class="d-inline-block mb-0"><%= earning.balance %></h6>
-                      <span class="badge badge-success ml-2">Egreso</span>
-                      <small class="d-block text-muted"><%= earning.note %></small>
-                      <small class="d-block text-muted"><%= account.name %></small>
-                    </div>
-                  </div>
-                </div>
+                    <% account.egresses.each do |egress| %>
+                      <div class="card-body pt-2">
+                        <div class="d-flex border-bottom py-2">
+                          <div class="d-flex mr-3">
+                            <h2 class="align-self-center mb-0">
+                              <i class="icon ion-md-pricetag"></i>
+                            </h2>
+                          </div>
+                          <div class="align-self-center">
+                            <h6 class="d-inline-block mb-0">- <%= egress.balance %> COP</h6>
+                            <span class="badge badge-success ml-2">Egreso</span>
+                            <small class="d-block text-muted"><%= egress.note %></small>
+                            <small class="d-block text-muted"><%= account.name.split("-")[0] %></small>
+                          </div>
+                        </div>
+                      </div>
                     <% end %>
                   <% end %>
                 </div>
