@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(_resource)
+  def after_sign_in_path_for(resource)
     '/businesses' # Or :prefix_to_your_route
   end
 
