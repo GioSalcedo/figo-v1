@@ -16,7 +16,7 @@
 
         <header>
           <div class="container">
-            <div class="logo">
+            <div class="logo-home">
               <%= image_tag("logo.png") %>
               <h3></h3>
             </div>
@@ -30,8 +30,8 @@
                   <li><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn" %></li>
                   <li><%= link_to "Ir al Dashboard", businesses_path, class:"btn" %></li>
                 <% else %>
-                  <li><%= link_to "Login", new_user_session_path, class:"btn" %></li>
-                  <li><%= link_to "Sign up", new_user_registration_path, class:"btn"%></li>
+                  <li><%= link_to "Iniciar sesión", new_user_session_path, class:"btn" %></li>
+                  <li><%= link_to "Registrarse", new_user_registration_path, class:"btn"%><li>
                 <% end %>
               </ul>
             </div>
@@ -127,7 +127,7 @@
         <p>Reciba las ultimas noticias y ofertas</p>
         <div class="box">
             <input type="text" placeholder="Ingrese su correo">
-            <a href="#" class="btn">Suscribirse</a>
+            <a href="#" class="btn-subs">Suscribirse</a>
         </div>
 
     </section>
