@@ -35,21 +35,21 @@ Business.create(
 
 Account.create(
   business_id: 1,
-  name: "Cuenta de ahorro",
+  name: "Cuenta de ahorro - Mango Biche",
   balance: 100000,
   currency: "COP"
 )
 
 Account.create(
   business_id: 1,
-  name: "Bancolombia",
+  name: "Bancolombia - Mango Biche",
   balance: 20000,
   currency: "COP"
 )
 
 Account.create(
   business_id: 1,
-  name: "Efectivo",
+  name: "Efectivo - Mango Biche",
   balance: 500000,
   currency: "COP"
 )
@@ -235,21 +235,21 @@ end
 
 Account.create(
   business_id: 2,
-  name: "Cuenta de ahorro",
+  name: "Cuenta de ahorro - Vector Foods",
   balance: 500000,
   currency: "COP"
 )
 
 Account.create(
   business_id: 2,
-  name: "Bancolombia",
+  name: "Bancolombia - Vector Foods",
   balance: 3000000,
   currency: "COP"
 )
 
 Account.create(
   business_id: 2,
-  name: "Efectivo",
+  name: "Efectivo - Vector Foods",
   balance: 15000000,
   currency: "COP"
 )
@@ -435,21 +435,21 @@ end
 
   Account.create(
     business_id: 3,
-    name: "Cuenta de ahorro",
+    name: "Cuenta de ahorro - Natif",
     balance: 100000,
     currency: "COP"
   )
 
   Account.create(
     business_id: 3,
-    name: "Bancolombia",
+    name: "Bancolombia - Natif",
     balance: 8000000,
     currency: "COP"
   )
 
   Account.create(
     business_id: 3,
-    name: "Efectivo",
+    name: "Efectivo - Natif",
     balance: 16000000,
     currency: "COP"
   )
