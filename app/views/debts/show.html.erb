@@ -1,15 +1,15 @@
-<h1>Debts#show</h1>
+<h1>Información de la deuda</h1>
 
     <div class="card">
       <div class="card-body">
-        <h5><%= @debt.business.name %></h5>
-        <p><%= @debt.name %></p>
-        <p><%= @debt.date %></p>
-        <p><%= @debt.balance %></p>
-        <p><%= @debt.currency %></p>
-        <p><%= @debt.note %></p>
+        <h5>¿Que negocio tiene la deuda?: <%= @debt.business.name %></h5>
+        <p>Nombre de la deuda: <%= @debt.name %></p>
+        <p>Fecha de la deuda<%= @debt.date %></p>
+        <p>¿Cuanto debo?: <%= @debt.balance %></p>
+        <p>¿En que moneda?: <%= @debt.currency %></p>
+        <p>Observaciones de la deuda: <%= @debt.note %></p>
       </div>
     </div>
-<%= link_to "Regresar", debts_path %>
-<%= link_to "Editar", edit_debt_path %>
-<%= button_to "", debt_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+<%= link_to "Regresar", debts_path, class:"btn btn-info"%>
+<%= link_to "Editar", edit_debt_path,class:"btn btn-info" %>
+<%= button_to "Eliminar", debt_path, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
