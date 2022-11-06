@@ -22,28 +22,12 @@
                   </div>
               </div>
           </div>
-
-        <div class="projects">
-              <h3>Trayectoria</h3>
-              <div class="projects_data">
-                  <div class="data">
-                      <h4>Recent</h4>
-                      <p>Lorem ipsum dolor sit amet.</p>
-                  </div>
-                  <div class="data">
-                    <h4>Most Viewed</h4>
-                      <p>dolor sit amet.</p>
-                </div>
-              </div>
-          </div>
-
           <div class="informacion_user">
               <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= f.error_notification %>
 
               <div class="form-inputs">
                 <%= f.input :email, required: true, autofocus: true %>
-
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                   <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
                 <% end %>
