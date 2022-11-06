@@ -9,7 +9,7 @@
                 <div class="mx-auto">
                 <div class="info">
                   <h6 class="text-muted"><%= account.name.split("-")[0] %></h6>
-                  <h3 class="font-weight-bold">$<%= account.balance %></h3>
+                  <h3 class="font-weight-bold">$<%= account.balance%></h3>
                   <%# <h3 class="font-weight-bold"><%= account.currency %></h3>
                 </div>
                 </div>
@@ -62,19 +62,19 @@
                         <td><%= earning.date %></td>
                         <td><%= earning.note %></td>
                         <td><%= earning.category %></td>
-                        <td>$<%= earning.balance %></td>
+                        <td class="text-success">$<%= earning.balance %></td>
                       </tr>
                     </tbody>
                   <% end %>
                   <% end %>
                     <% @business.accounts.each do |account| %>
-                    <% account.egresses.last(5).each do |earning| %>
+                    <% account.egresses.last(5).each do |egress| %>
                     <tbody>
                       <tr>
-                        <td><%= earning.date %></td>
-                        <td><%= earning.note %></td>
-                        <td><%= earning.category %></td>
-                        <td>$<%= earning.balance %></td>
+                        <td><%= egress.date %></td>
+                        <td><%= egress.note %></td>
+                        <td><%= egress.category %></td>
+                        <td class="text-danger">$<%= egress.balance %></td>
                       </tr>
                     </tbody>
                   <% end %>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="align-self-center">
                       <h6 class="d-inline-block mb-0"><%= earning.balance %></h6>
-                      <span class="badge badge-success ml-2">Ingreso</span>
+                      <span class="badge text-bg-success badge-span">Ingreso</span>
                       <small class="d-block text-muted"><%= earning.note %></small>
                       <small class="d-block text-muted"><%= account.name %></small>
                     </div>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="align-self-center">
                       <h6 class="d-inline-block mb-0"><%= earning.balance %></h6>
-                      <span class="badge badge-success ml-2">Egreso</span>
+                      <span class="badge text-bg-danger badge-span">Egreso</span>
                       <small class="d-block text-muted"><%= earning.note %></small>
                       <small class="d-block text-muted"><%= account.name %></small>
                     </div>

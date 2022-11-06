@@ -1,2 +1,32 @@
-<h1>Egresses#show</h1>
-<p>Find me in app/views/egresses/show.html.erb</p>
+<h1>Detalle de la transacción</h1>
+<p>Esta es la información de tu transacción.</p>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <%= @egress.account.name %>
+        </div>
+        <div class="card-body">
+          <h5>Monto de la transacción: </h5><h5 class="card-title
+          <%= @egress.balance > 0 ? "text-danger" : "text-success" %>">
+            $<%= @egress.balance %>
+          </h5>
+          <p class="card-text"> Categoría:
+            <%= @egress.category %>
+          </p>
+          <p class="card-text"> Fecha:
+            <%= @egress.date %>
+          </p>
+          <p class="card-text"> Beneficiario:
+            <%= @egress.beneficiary %>
+          </p>
+          <p class="card-text"> Observaciones:
+            <%= @egress.note %>
+          </p>
+          <%# <%= link_to "Editar", edit_egress_path(@egress), class:"btn btn-secundary" %>
+          <%= link_to "Eliminar", egress_path(@egress), method: :delete, data: { confirm: "¿Estás seguro?" }, class:"btn btn-secundary" %>
+        </div>
+      </div>
+    </div>
+  </div>
