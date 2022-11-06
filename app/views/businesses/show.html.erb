@@ -67,8 +67,8 @@
                     </tbody>
                   <% end %>
                   <% end %>
-                    <% @business.accounts.each do |account| %>
-                    <% account.egresses.last(5).each do |egress| %>
+                  <% @business.accounts.each do |account| %>
+                  <% account.egresses.last(5).each do |egress| %>
                     <tbody>
                       <tr>
                         <td><%= egress.date %></td>
@@ -82,8 +82,6 @@
                   </table>
                 </div>
               </div>
-
-
             </div>
             <div class="col-lg-4 my-3">
               <div class="card rounded-0">
@@ -109,7 +107,6 @@
                 </div>
                     <% end %>
                   <% end %>
-
                   <% @business.accounts.each do |account| %>
                     <% account.egresses.last(3).each do |earning| %>
                 <div class="card-body pt-2">
