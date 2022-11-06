@@ -2,7 +2,7 @@ class EgressesController < ApplicationController
   before_action :set_egress, only: %i[show edit update destroy]
 
   def index
-    @egresses = Egress.where(user_id: current_user)
+    @earnings = Earning.where(account_id: params[:account_id])
   end
 
   def show; end
@@ -17,8 +17,7 @@ class EgressesController < ApplicationController
     if @egress.save
       new_balance = @egress.account.balance - @egress.balance
       @egress.account.update(balance: new_balance)
-      @account.save
-      redirect_to account_egresses_path(@account)
+      redirect_to account_path(@egress.account)
     else
       render :new
     end
