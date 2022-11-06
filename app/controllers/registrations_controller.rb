@@ -1,11 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
   protected
 
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     '/businesses' # Or :prefix_to_your_route
   end
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name avatar])
+  def after_inactive_sign_up_path_for(_resource)
+    '/businesses' # Or :prefix_to_your_route
   end
 end

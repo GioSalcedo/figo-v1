@@ -9,8 +9,8 @@
 <body>
   <div class="wrapper">
       <div class="left">
-          <%= cl_image_tag(current_user.avatar.key) %>
-            <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+          <%= cl_image_tag(current_user.avatar.key)%>
+          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
       </div>
       <div class="right">
           <div class="info">
@@ -53,7 +53,7 @@
             <% end %>
             <h3>Cancelar mi cuenta</h3>
 
-            <p>🤨Eres infeliz con FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <p>¿Eres infeliz con FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
             <%= link_to "Volver", :back %>
 
