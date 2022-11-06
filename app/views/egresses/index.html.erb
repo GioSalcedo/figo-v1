@@ -6,32 +6,32 @@
                   <h6 class="font-weight-bold mb-0">Salidas de Dinero</h6>
                 </div>
   <div class="card-body">
-    <table class="tabla">
-      <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Categoría</th>
-            <th>Monto</th>
-          </tr>
-      </thead>
-    <% current_user.businesses.each do |business| %>
-      <% business.accounts.each do |account| %>
-        <% account.egresses.each do |egress| %>
-                    <tbody>
-                      <tr>
-                        <td><%= egress.date %></td>
-                        <td><%= egress.note %></td>
-                        <td><%= egress.category %></td>
-                        <td>$<%= egress.balance %></td>
-                      </tr>
-                    </tbody>
-        <% end %>
-      <% end %>
-    <% end %>
-  </table>
-  </div>
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                              <th>Fecha</th>
+                              <th>Descripción</th>
+                              <th>Categoría</th>
+                              <th>Monto</th>
+                            </tr>
+                        </thead>
+                      <% current_user.businesses.each do |business| %>
+                        <% business.accounts.each do |account| %>
+                          <% account.egresses.each do |egress| %>
+                            <tbody>
+                              <tr>
+                                <td><%= egress.date %></td>
+                                <td><%= egress.note %></td>
+                                <td><%= egress.category %></td>
+                                <td>- <%= egress.balance %> COP</td>
+                              </tr>
+                            </tbody>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    </table>
                   </div>
+                </div>
               </div>
             </div>
           </div>
