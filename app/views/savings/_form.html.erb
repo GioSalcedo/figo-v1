@@ -1,10 +1,11 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <%= simple_form_for [@business, @saving] do |f| %>
+    <%= simple_form_for @saving do |f| %>
+      <%= f.input :business_id, collection: current_user.businesses %>
       <%= f.input :name %>
       <%= f.input :date, as: :date, order: [:day, :month, :year]%>
       <%= f.input :balance %>
-      <%= f.input :currency %>
+      <%= f.input :currency, as: :radio_buttons, collection:["COP"] %>
       <%= f.input :note %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>

@@ -1,12 +1,12 @@
 <h1>Deudas</h1>
-
+          <p class="card-text"><%= link_to "Agregar Nueva Deuda", new_debt_path, class:"btn btn-secundary mb-2" %> </p>
 <div class="row">
   <% @debts.each do |debt| %>
-  <div class="col-lg-3 col-md-6 d-flex my-3">
-    <div class="card">
-      <div class="card-body">
+    <div class="col-lg-3 col-md-6 d-flex my-3">
+      <div class="card">
+        <div class="card-body">
         <%= link_to debt.name, debt %>
-        <p class="card-text">En esta tarjeta encuentras la información de la <%= debt.name %>, si necesitas saber más, puedes hacer click aquí.</p>
+        <p class="card-text">En esta tarjeta encuentras la información del <%= debt.name %>, si necesitas saber más, puedes hacer click aquí.</p>
         </div>
       </div>
     </div>

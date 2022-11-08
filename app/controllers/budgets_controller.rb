@@ -8,15 +8,13 @@ class BudgetsController < ApplicationController
 
   def new
     @budget = Budget.new
-    @business = Business.find(params[:business_id])
+    @business = current_user.businesses
   end
 
   def create
     @budget = Budget.new(budget_params)
-    @business = Business.find(params[:business_id])
-    @budget.business_id = @business.id
     if @budget.save
-      redirect_to @budget
+      redirect_to budgets_path
     else
       render :new
     end
@@ -26,7 +24,7 @@ class BudgetsController < ApplicationController
 
   def update
     if @budget.update(budget_params)
-      redirect_to @budget
+      redirect_to budgets_path
     else
       render :edit
     end
@@ -34,7 +32,7 @@ class BudgetsController < ApplicationController
 
   def destroy
     @budget.destroy
-    redirect_to budgets_url
+    redirect_to budgets_path
   end
 
   private

@@ -1,18 +1,14 @@
 <h1>Presupuestos</h1>
-
-
-  <div class="row">
+          <p class="card-text"><%= link_to "Agregar Nuevo Presupuesto", new_budget_path, class:"btn btn-secundary mb-2" %> </p>
+<div class="row">
   <% @budgets.each do |budget| %>
     <div class="col-lg-3 col-md-6 d-flex my-3">
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><%= link_to budget.name, budget %></h5>
-
-    <p class="card-text">En esta tarjeta encuentras la información del <%= budget.name %> si necesitas mas información, entra aquí.</p>
-
-  </div>
-</div>
-</div>
-<% end %>
-
+      <div class="card">
+        <div class="card-body">
+        <%= link_to budget.name, budget %>
+        <p class="card-text">En esta tarjeta encuentras la información del <%= budget.name %>, si necesitas saber más, puedes hacer click aquí.</p>
+        </div>
+      </div>
+    </div>
+   <% end %>
 </div>

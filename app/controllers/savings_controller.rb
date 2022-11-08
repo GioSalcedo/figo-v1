@@ -1,5 +1,6 @@
 class SavingsController < ApplicationController
   before_action :set_saving, only: %i[show edit update destroy]
+
   def index
     @savings = current_user.savings
   end
@@ -8,15 +9,13 @@ class SavingsController < ApplicationController
 
   def new
     @saving = Saving.new
-    @business = Business.find(params[:business_id])
+    @businesses = current_user.businesses
   end
 
   def create
     @saving = Saving.new(saving_params)
-    @business = Business.find(params[:business_id])
-    @saving.business_id = @business.id
     if @saving.save
-      redirect_to @saving
+      redirect_to savings_path
     else
       render :new
     end
@@ -26,7 +25,7 @@ class SavingsController < ApplicationController
 
   def update
     if @saving.update(saving_params)
-      redirect_to @saving
+      redirect_to savings_path
     else
       render :edit
     end
@@ -44,6 +43,6 @@ class SavingsController < ApplicationController
   end
 
   def saving_params
-    params.require(:saving).permit(:name, :balance, :currency, :date, :note)
+    params.require(:saving).permit(:business_id, :name, :balance, :currency, :date, :note)
   end
 end
