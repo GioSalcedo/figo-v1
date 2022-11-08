@@ -14,11 +14,13 @@
       </div>
       <div class="right">
           <div class="info">
-              <h3>Information</h3>
+              <h3>Mi información</h3>
               <div class="info_data">
                   <div class="data">
                       <h4>Email</h4>
+                      <h3>
                       <%= current_user.email %>
+                      </h3>
                   </div>
               </div>
           </div>
@@ -27,22 +29,22 @@
               <%= f.error_notification %>
 
               <div class="form-inputs">
-                <%= f.input :email, required: true, autofocus: true %>
+                <%= f.input :email, label: "Correo electrónico", required: true, autofocus: true %>
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                   <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
                 <% end %>
-                <%= f.input :avatar, as: :file %>
-                <%= f.input :first_name%>
-                <%= f.input :last_name%>
-                <%= f.input :password,
-                            hint: "leave it blank if you don't want to change it",
+                <%= f.input :avatar, label: "Foto de perfil", as: :file %>
+                <%= f.input :first_name, label: "Nombre"%>
+                <%= f.input :last_name, label: "Apellido"%>
+                <%= f.input :password, label: "Contraseña",
+                            hint: "Deja este espacio en blanco si no quieres cambiar la contraseña.",
                             required: false,
                             input_html: { autocomplete: "new-password" } %>
-                <%= f.input :password_confirmation,
+                <%= f.input :password_confirmation, label: "Confirmar contraseña",
                             required: false,
                             input_html: { autocomplete: "new-password" } %>
-                <%= f.input :current_password,
-                            hint: "we need your current password to confirm your changes",
+                <%= f.input :current_password, label: "Contraseña actual",
+                            hint: "Necesitamos tu contraseña actual para confirmar los cambios realizados.",
                             required: true,
                             input_html: { autocomplete: "current-password" } %>
               </div>
@@ -50,13 +52,16 @@
               <div class="form-actions">
                 <%= f.button :submit, "Actualizar" %>
               </div>
+              <br>
+              <br>
+
             <% end %>
             <h3>Cancelar mi cuenta</h3>
+            <div class="devise-links">
+            <p>¿No te gustó FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete, class: "btn" %></p>
 
-            <p>¿Eres infeliz con FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-            <%= link_to "Volver", :back %>
-
+            <%= link_to "Volver", :back, class: "btn" %>
+            </div>
           </div>
       </div>
   </div>

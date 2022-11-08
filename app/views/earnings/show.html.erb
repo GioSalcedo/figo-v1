@@ -1,2 +1,32 @@
-<h1>Earnings#show</h1>
-<p>Find me in app/views/earnings/show.html.erb</p>
+<h1>Detalle de la transacción</h1>
+<p>Esta es la información de tu transacción.</p>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <%= @earning.account.name %>
+        </div>
+        <div class="card-body">
+          <h5>Monto de la transacción: </h5><h5 class="card-title
+          <%= @earning.balance > 0 ? "text-success" : "text-danger" %>">
+            $<%= @earning.balance %>
+          </h5>
+          <p class="card-text"> Categoría:
+            <%= @earning.category %>
+          </p>
+          <p class="card-text"> Fecha:
+            <%= @earning.date %>
+          </p>
+          <p class="card-text"> Beneficiario:
+            <%= @earning.beneficiary %>
+          </p>
+          <p class="card-text"> Observaciones:
+            <%= @earning.note %>
+          </p>
+          <%# <%= link_to "Editar", edit_earning_path(@earning), class:"btn btn-secundary" %>
+          <%= link_to "Eliminar", earning_path(@earning), method: :delete, data: { confirm: "¿Estás seguro?" }, class:"btn btn-secundary" %>
+        </div>
+      </div>
+    </div>
+  </div>
