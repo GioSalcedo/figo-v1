@@ -1,7 +1,4 @@
-  <%= link_to "Nueva empresa", new_business_path, class:"btn btn-secundary mb-2" %>
-  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-  <script src="javascript/main.js"></script>
-  <script src=".javascript/appplication.js"></script>
+<%= link_to "Nueva empresa", new_business_path, class:"btn btn-secundary mb-2" %>
 
 <div class="row">
   <% @businesses.each do |business| %>
@@ -15,7 +12,3 @@
     </div>
    <% end %>
 </div>
-  <button class="switch" id="switch">
-    <span><i class="fa-solid fa-sun"></i></span>
-    <span><i class="fa-solid fa-moon"></i></span>
-  </button>
