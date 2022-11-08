@@ -1,0 +1,22 @@
+:root {
+  --primary-color: #6727f2;
+  --secondary-color: #5058f8;
+  --tertiary-color: #6b7ff2;
+  --quaternary-color: #809df2;
+  --fifth-color: #3dd9c9;
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "League Spartan", sans-serif;
+}
+.avatar {
+  width: 50%;
+  height: 50%;
+  margin: 5px 15px 5px 5px ;
+}
+
+.user {
+  background-color: var(--secondary-color);
+}
+
+section {
+  background-color: var(--secondary-color);
+}
