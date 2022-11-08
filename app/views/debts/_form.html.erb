@@ -1,12 +1,12 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
     <%= simple_form_for @debt do |f| %>
-      <%= f.input :business_id, collection: current_user.businesses %>
-      <%= f.input :name %>
-      <%= f.input :date, as: :date, order: [:day, :month, :year]%>
-      <%= f.input :balance %>
-      <%= f.input :currency, as: :radio_buttons, collection:["COP"] %>
-      <%= f.input :note %>
+      <%= f.input :business_id, label: "¿Para que empresa?", collection: current_user.businesses %>
+      <%= f.input :name, label: "Nombre" %>
+      <%= f.input :date, label: "Fecha", as: :date, order: [:day, :month, :year]%>
+      <%= f.input :balance, label: "Monto" %>
+      <%= f.input :currency, label: "Moneda", as: :radio_buttons, collection:["COP"] %>
+      <%= f.input :note, label: "Observación" %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>
   </div>

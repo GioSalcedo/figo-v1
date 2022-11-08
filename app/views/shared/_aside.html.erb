@@ -39,10 +39,12 @@
         <% end %>
       </ul>
     </div>
+    <div class="sidebar-btn">
     <li class="col-sm-8">
       <%= button_to " Cerrar Sesión", destroy_user_session_path, method:
-      :delete, form: { data: { turbo: :false } }, class:"btn btn-link d-block
-      p-3 border-0 lead mr-2 icon ion-md-log-out lead sidebar-btn" %>
+      :delete, form: { data: { turbo: :false } }, class:"btn d-block
+      p-3 border-0 lead mr-2 icon ion-md-log-out lead btn-light" %>
     </li>
+    </div>
   </div>
 </div>
