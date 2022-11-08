@@ -1,13 +1,19 @@
+<h1>Detalle de la meta</h1>
     <div class="card">
       <div class="card-body">
-        <h5><%= @saving.business.name %></h5>
-        <p><%= @saving.name %></p>
-        <p><%= @saving.date %></p>
-        <p><%= @saving.balance %></p>
-        <p><%= @saving.currency %></p>
-        <p><%= @saving.note %></p>
+        <h5>¿Para que negocio se configuró la meta?: <%= @saving.business.name %></h5>
+        <p>Nombre de la meta: <%= @saving.name %></p>
+        <p>Fecha de creación de la meta<%= @saving.date %></p>
+        <p>¿Caunto quiero ahorrar?: <%= @saving.balance %></p>
+        <p>¿En que mondeda quiero ahorrar?<%= @saving.currency %></p>
+        <p>Observaciones del ahorro: <%= @saving.note %></p>
       </div>
     </div>
-<%= link_to "Regresar", savings_path %>
-<%= link_to "Editar", edit_saving_path %>
-<%= button_to "", saving_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+
+<%= link_to "Regresar", savings_path, class:"btn btn-info"%>
+
+
+<%= link_to "Editar", edit_saving_path, class:"btn btn-info"%>
+
+
+<%= button_to "Eliminar", saving_path, method: :delete, data: { confirm: "¿Estas seguro?" }, class:"btn btn-danger" %>
