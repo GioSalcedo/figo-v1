@@ -15,20 +15,20 @@ User.create(
 )
 
 Business.create(
-    user_id: 1,
+    user_id: 2,
     name: "Mango Biche",
     description: "Microempresa dedicada a la venta y distribucion de mango en la ciudad de Medellin"
 )
 
 Business.create(
-    user_id: 1,
+    user_id: 2,
     name: "Vector Foods",
     description:"Una empresa dedicada a la creacion de snacks cuya propuesta  se enfoca en ingredientes diferenciadores premium como el aceite de aguacate y la sal rosada del Himalaya, entre otros, además de la rapidez con la que saben adaptarse a las nuevas necesidades de los consumidores"
 )
 
 
 Business.create(
-  user_id: 1,
+  user_id: 2
   name: "Natif by Issa Vásquez",
   description:" Empresa dedicada ala creacion de productos con pocos conservantes. Su meta es llegar a ser el pan saludable más consumido en todo el país, así como incursionar en todos los formatos de venta: retail, grandes cadenas, stands saludables, farmacias, entre otros."
 )

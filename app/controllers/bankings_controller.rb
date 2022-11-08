@@ -15,9 +15,14 @@ class BankingsController < ApplicationController
   def create
     sender_account = Account.find(params[:banking][:accounts][:sender_account].split[-1])
     receptor_account = Account.find(params[:banking][:accounts][:receptor_account].split[-1])
-    earning = Earning.create(balance: params[:banking][:accounts][:balance].to_i, account_id: sender_account.id)
-    egress = Egress.create(balance: params[:banking][:accounts][:balance].to_i, account_id: receptor_account.id)
-    @business = Business.find(params[:business_id])
+    currency = params[:banking][:accounts][:currency]
+    category = params[:banking][:accounts][:category]
+    date = Date.today
+    beneficiary = params[:banking][:accounts][:beneficiary]
+    note = params[:banking][:accounts][:note]
+    balance = params[:banking][:accounts][:balance]
+    earning = Earning.create(balance: balance.to_i, account_id: sender_account.id, currency: currency, category: category, date: date, beneficiary: beneficiary, note: note)
+    egress = Egress.create(balance: balance.to_i, account_id: receptor_account.id, currency: currency, category: category, date: date, beneficiary: beneficiary, note: note)
     @banking = Banking.new(banking_params)
     @banking.earning = earning
     @banking.egress = egress
