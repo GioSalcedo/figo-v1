@@ -1,5 +1,6 @@
 class DebtsController < ApplicationController
   before_action :set_debt, only: %i[show edit update destroy]
+
   def index
     @debts = current_user.debts
   end
@@ -8,15 +9,13 @@ class DebtsController < ApplicationController
 
   def new
     @debt = Debt.new
-    @business = Business.find(params[:business_id])
+    @businesses = current_user.businesses
   end
 
   def create
     @debt = Debt.new(debt_params)
-    @business = Business.find(params[:business_id])
-    @debt.business_id = @business.id
     if @debt.save
-      redirect_to @debt
+      redirect_to debts_path
     else
       render :new
     end
@@ -26,7 +25,7 @@ class DebtsController < ApplicationController
 
   def update
     if @debt.update(debt_params)
-      redirect_to @debt
+      redirect_to debts_path
     else
       render :edit
     end

@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :businesses do
-    resources :savings, only: %i[new create]
-    resources :debts, only: %i[new create]
-    resources :budgets, only: %i[new create]
     resources :bankings, only: %i[new create]
   end
   resources :earnings
@@ -13,8 +10,7 @@ Rails.application.routes.draw do
   resources :accounts
 
   resources :bankings
-
-  resources :savings, except: %i[new create]
-  resources :debts, except: %i[new create]
-  resources :budgets, except: %i[new create]
+  resources :savings
+  resources :debts
+  resources :budgets
 end

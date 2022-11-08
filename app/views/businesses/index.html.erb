@@ -3,19 +3,18 @@
   <script src="javascript/main.js"></script>
   <script src=".javascript/appplication.js"></script>
 
-  <div class="row">
+<div class="row">
   <% @businesses.each do |business| %>
     <div class="col-lg-3 col-md-6 d-flex my-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><%= link_to business.name, business %></h5>
+        <h5 class="card-title"><%= link_to business.name, business %></h5>
           <p class="card-text"><%= business.description %>  </p>
         </div>
       </div>
     </div>
-  <% end %>
-  </div>
-
+   <% end %>
+</div>
   <button class="switch" id="switch">
     <span><i class="fa-solid fa-sun"></i></span>
     <span><i class="fa-solid fa-moon"></i></span>

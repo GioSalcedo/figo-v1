@@ -2,50 +2,47 @@
   <div class="p-4 text-light text-align-center fs-1 logo">
     <h1 class="logo">FIGO</h1>
   </div>
-  <div id="sidebar-container" class=" m-0">
-      <div class="menu container-fluid m-0 p-0">
-        <ul class="navbar-nav me-auto">
-          <li>
-            <%= link_to "   Mis empresas", businesses_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-apps w-100" %>
-          </li>
-          <% if params["controller"] == "businesses" && params["action"] == "show" %>
-          <li>
-            <%= link_to "   Metas", savings_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-stats" %>
-          </li>
-          <li>
-            <%= link_to "   Presupuesto", budgets_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-pie lead mr-2" %>
-          </li>
-          <li>
-            <%= link_to "   Deudas", debts_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
-          </li>
-          <li>
-              <%= link_to "   Agregar Ingreso", new_earning_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
-          </li>
-          <li>
-            <%= link_to "   Agregar Egreso", new_egress_path, class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
-          </li>
-
-          <li>
-            <%= link_to "   Agregar Transferencia", new_business_banking_path(@business), class:"d-block text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-          <li class="mt-5">
-            <%= button_to "   Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn btn-link d-block p-3 border-0 lead mr-2 icon ion-md-log-out lead btn btn-light" %>
-          </a>
-          </li>
+  <div id="sidebar-container" class="m-0 col-sm-8">
+    <div class="menu container-fluid m-0 p-0">
+      <ul class="navbar-nav me-auto">
+        <li>
+          <%= link_to " Mis empresas", businesses_path, class:"d-block
+          text-light p-3 border-0 lead mr-2 icon ion-md-apps w-100" %>
+        </li>
+        <li>
+          <%= link_to " Metas", savings_path, class:"d-block text-light p-3
+          border-0 lead mr-2 icon ion-md-stats" %>
+        </li>
+        <li>
+          <%= link_to " Presupuesto", budgets_path, class:"d-block text-light
+          p-3 border-0 lead mr-2 icon ion-md-pie lead mr-2" %>
+        </li>
+        <li>
+          <%= link_to " Deudas", debts_path, class:"d-block text-light p-3
+          border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+        </li>
+        <% if params["controller"] == "businesses" && params["action"] == "show"
+        %>
+        <li>
+          <%= link_to " Agregar Ingreso", new_earning_path, class:"d-block
+          text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+        </li>
+        <li>
+          <%= link_to " Agregar Egreso", new_egress_path, class:"d-block
+          text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+        </li>
+        <li class="col-sm-8">
+          <%= link_to " Agregar Transferencia",
+          new_business_banking_path(@business), class:"d-block text-light p-3
+          border-0 lead mr-2 icon ion-md-cash lead mr-2" %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <li class="col-sm-8">
+      <%= button_to " Cerrar Sesión", destroy_user_session_path, method:
+      :delete, form: { data: { turbo: :false } }, class:"btn btn-link d-block
+      p-3 border-0 lead mr-2 icon ion-md-log-out lead sidebar-btn" %>
+    </li>
   </div>
 </div>
-
-          <%# <li>
-            <a href="http://127.0.0.1:3000/businesses" class="d-block text-light p-3 border-0">
-            <i class="icon ion-md-add lead mr-2">Registros</i>
-          </a>
-          </li> %>
-
-          <%# <li>
-            <a href="#" class="d-block text-light p-3 border-0">
-            <i class="icon ion-md-settings lead mr-2"> Configuración</i>
-          </a>
-          </li> %>
