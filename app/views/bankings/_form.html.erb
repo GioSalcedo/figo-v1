@@ -5,7 +5,6 @@
         <%= o.input :balance %>
         <%= o.input :currency, as: :radio_buttons, collection:["COP"] %>
         <%= o.input :category %>
-        <!--<%= o.input :date, as: :date, order: [:day, :month, :year]%>-->
         <%= o.input :beneficiary %>
         <%= o.input :note %>
         <%= o.select :sender_account, @business.accounts.map { |account| account.name + " " + account.id.to_s }%>
