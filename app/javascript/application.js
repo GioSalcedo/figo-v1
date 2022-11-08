@@ -42,6 +42,15 @@ function toggleAnimation() {
   });
 }
 
+const btnSwitch = document.querySelector('#switch')
+
+btnSwitch.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  btnSwitch.classList.toggle('active');
+});
+
+
+
 // function events() {
 //   toggle_btn.addEventListener("click", toggleAnimation);
 //   hamburger_menu.addEventListener("click", () => {
