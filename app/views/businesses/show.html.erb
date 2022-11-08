@@ -67,6 +67,7 @@
                     </tbody>
                   <% end %>
                   <% end %>
+                  <%= link_to "Ver más detalles", earnings_path, class:"btn btn-secundary mb-2" %>
                   <% @business.accounts.each do |account| %>
                   <% account.egresses.last(5).each do |egress| %>
                     <tbody>
@@ -79,6 +80,7 @@
                     </tbody>
                   <% end %>
                   <% end %>
+                  <%= link_to "Ver más detalles", egresses_path, class:"btn btn-secundary mb-2" %>
                   </table>
                 </div>
               </div>
