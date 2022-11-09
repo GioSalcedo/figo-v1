@@ -11,7 +11,9 @@
                 <% if @business %>
               <p class="lead text-light">
                 Este es el estado de cuenta de
-                  <span><%= @business.name %></span>
+                  <%= link_to edit_business_path, class:"text-white" do %>
+                    <%= @business.name %> <i class="fa-solid fa-pen-to-square"></i>
+                  <% end %>
               </p>
                 <% end %>
             </div>
