@@ -28,7 +28,7 @@ Business.create(
 
 
 Business.create(
-  user_id: 2
+  user_id: 2,
   name: "Natif by Issa Vásquez",
   description:" Empresa dedicada ala creacion de productos con pocos conservantes. Su meta es llegar a ser el pan saludable más consumido en todo el país, así como incursionar en todos los formatos de venta: retail, grandes cadenas, stands saludables, farmacias, entre otros."
 )
