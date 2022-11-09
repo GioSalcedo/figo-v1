@@ -8,7 +8,7 @@
                 <div class="col-lg-3 col-md-6 d-flex my-3">
                 <div class="mx-auto">
                 <div class="info">
-                  <h6 class="text-muted"><%= account.name.split("-")[0] %></h6>
+                  <h6 class="text-muted"><%= link_to account.name.split("-")[0], account_path %></h6>
                   <h3 class="font-weight-bold">$<%= account.balance%></h3>
                   <%# <h3 class="font-weight-bold"><%= account.currency %></h3>
                 </div>
@@ -25,13 +25,12 @@
                   </h3>
                 </div>
               </div>
-              <% total = 0 %> <% @business.accounts.each do |account| %> <%
-              total += account.balance %> <% end %>
-              <div
-                class="info"
-                style="display: flex; justify-content: space-between"
-              >
-                <h6>Saldo total en mis cuentas: $<%= total %></h6>
+                <% total = 0 %>
+                <% @business.accounts.each do |account| %>
+                <% total += account.balance %>
+                <% end %>
+              <div class="p-2">
+                <h6 class="text-center p-1" >Saldo total en mis cuentas: $<%= total %></h6>
               </div>
             </div>
           </div>
@@ -49,6 +48,7 @@
 
                     <thead>
                       <tr>
+                        <th>Account ID</th>
                         <th>Fecha</th>
                         <th>Descripción</th>
                         <th>Categoría</th>
@@ -59,6 +59,7 @@
                     <% account.earnings.last(5).each do |earning| %>
                     <tbody>
                       <tr>
+                        <td><%= account.id %></td>
                         <td><%= earning.date %></td>
                         <td><%= earning.note %></td>
                         <td><%= earning.category %></td>
@@ -72,6 +73,7 @@
                   <% account.egresses.last(5).each do |egress| %>
                     <tbody>
                       <tr>
+                        <td><%= account.name %></td>
                         <td><%= egress.date %></td>
                         <td><%= egress.note %></td>
                         <td><%= egress.category %></td>
