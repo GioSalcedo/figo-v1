@@ -512,6 +512,7 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--backgroundColor);
 }
 
 .newsletter h2 {
@@ -578,6 +579,7 @@ header .container {
 
 .reviews {
   padding: 50px 100px;
+  background-color: #f1f8fc;
 }
 
 .reviews-container {
