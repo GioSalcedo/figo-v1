@@ -3,7 +3,7 @@
     <div class="logo">
       <h1 class="text-light">FIGO</h1>
     </div>
-    <div class="menu">
+    <div class="menu mt-1">
       <ul>
         <li>
           <%= link_to " Mis empresas", businesses_path, class:"d-block
@@ -39,10 +39,10 @@
           border-0 lead mr-2 icon ion-md-cash lead mr-2 col-12" %>
         </li>
         <% end %>
-        <li class="logo">
+        <li class=" btn btn-primary position-absolute bottom-0 start-0 text-center">
           <%= button_to " Cerrar Sesión", destroy_user_session_path, method:
           :delete, form: { data: { turbo: :false } }, class:"d-block p-3
-          border-0 lead mr-2 icon ion-md-log-out lead btn-light" %>
+          border-0 lead mr-2 icon ion-md-log-out w-100 btn btn-outline-secondary" %>
         </li>
       </ul>
     </div>
