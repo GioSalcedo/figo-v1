@@ -1,7 +1,7 @@
 <div class="d-flex">
   <div id="sidebar-container">
-    <div class="logo">
-      <h1 class="text-light">FIGO</h1>
+    <div class="logo text-light m-0 p-0 d-flex justify-content-center">
+      <h1 class="logo m-0 p-4">FIGO</h1>
     </div>
     <div class="menu">
       <ul>
@@ -41,7 +41,7 @@
         <% end %>
         <li class="logo">
           <%= button_to " Cerrar Sesión", destroy_user_session_path, method:
-          :delete, form: { data: { turbo: :false } }, class:"d-block p-3
+          :delete, form: { data: { turbo: :false } }, class:"btn d-block p-3
           border-0 lead mr-2 icon ion-md-log-out lead btn-light" %>
         </li>
       </ul>
