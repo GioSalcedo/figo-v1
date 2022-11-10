@@ -1,27 +1,30 @@
 <% if current_user %>
-<section class="m-0 d-flex">
+<section class="p-1 m-0 d-flex w-100">
         <div class="container-fluid">
           <div class="row logo d-flex">
             <div class="col-lg-9 col-md-6">
               <% if current_user %>
-              <h1 class="font-weight-bold mb-0 text-light">
+              <h1 class="font-weight-bold mb-0 text-light pt-3">
                 Bienvenido, <%= current_user.first_name %> <%= current_user.last_name %>
               </h1>
                 <% end %>
-                <% if @business %>
               <p class="lead text-light">
                 Este es el estado de cuenta de
-                  <span><%= @business.name %></span>
+                <% if params["controller"] == "businesses" && params["action"] == "show" %>
+                  <%= link_to edit_business_path, class:"text-white" do %>
+                    <%= @business.name %> <i class="fa-solid fa-pen-to-square"></i>
+                  <% end %>
               </p>
                 <% end %>
             </div>
           </div>
         </div>
-        <section class="p-2 wv-1">
-          <div class="user_img p-2 m-1 d-flex">
+        <section class="p-1 w-25 mw-100">
+          <div class="user_img p-2 m-1 d-flex align-middle">
             <%= cl_image_tag(current_user.avatar.key, :gravity=>"face", :crop=>"crop", class:"avatar")%>
-            <div class="">
-              <p><%= link_to "Ver mi perfil", edit_user_registration_path, class:"text-light btn-lg"%></p>
+            <div class="pt-2">
+              <p class="d-block text-light p-0 m-0">Perfil de Usuario</p>
+              <p class="d-block p-0"><%= link_to "Ver mi perfil", edit_user_registration_path, class:"text-light p-0 m-0"%></p>
             </div>
           </div>
         </section>

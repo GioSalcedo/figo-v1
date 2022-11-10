@@ -1,25 +1,50 @@
+:root {
+  --primary-color: #6727f2;
+  --secondary-color: #5058f8;
+  --tertiary-color: #6b7ff2;
+  --quaternary-color: #809df2;
+  --fifth-color: #3dd9c9;
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "League Spartan", sans-serif;
+  --color-font: #fff;
+}
+
 #sidebar-container {
   background-color: var(--secondary-color);
+  min-height: 100vh;
+  padding: 0;
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+
+  }
+  h1 {
+    font-family: var(--secondary-font);
+    font-size: 4rem;
+    font-weight: 900;
+    padding-right: 48px;
+  }
 }
 
-.logo {
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 800;
-  font-size: 4rem;
-  color: var(--primary);
+.button_to {
+  width: 270px;
+}
+
+.button_to :hover {
   background-color: var(--secondary-color);
-  padding: 10px;
 }
 
+// .sidebar-menu{
+//   font-size: 1.4rem;
+//   font-weight: lighter;
+// }
 
-.sidebar-menu{
-  font-size: 1.4rem;
-  font-weight: lighter;
-}
-
-.sidebar-btn{
-  background-color: var(--secondary-color);
-  border: 0ch;
-  color: #fff;
-  text-decoration: none;
-}
+// .sidebar-btn{
+//   background-color: var(--secondary-color);
+//   border: 0ch;
+//   color: #fff;
+//   text-decoration: none;
+// }
