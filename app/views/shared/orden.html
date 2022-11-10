@@ -1,50 +1,58 @@
-<div class="d-flex">
-  <div id="sidebar-container">
-    <div class="logo text-light m-0 p-0 d-flex justify-content-center">
-      <h1 class="logo m-0 p-4">FIGO</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS User Profile Card</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="container">
+      <div class="wrapper">
+        <div class="left">
+          <%= cl_image_tag(current_user.avatar.key, :gravity=>"face", :height=>400, :width=>400, :crop=>"thumb")%>
+          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+        </div>
+      </div>
+      <div class="right">
+          <div class="info">
+            <h3>Mi información</h3>
+              <div class="informacion_user">
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :email, label: "Correo electrónico", required: true, autofocus: true %>
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                  <% end %>
+                  <%= f.input :avatar, label: "Foto de perfil", as: :file %>
+                  <%= f.input :first_name, label: "Nombre"%>
+                  <%= f.input :last_name, label: "Apellido"%>
+                  <%= f.input :password, label: "Contraseña",
+                              hint: "Deja este espacio en blanco si no quieres cambiar la contraseña.",
+                              required: false,
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :password_confirmation, label: "Confirmar contraseña",
+                              required: false,
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :current_password, label: "Contraseña actual",
+                              hint: "Necesitamos tu contraseña actual para confirmar los cambios realizados.",
+                              required: true,
+                              input_html: { autocomplete: "current-password" } %>
+                </div>
+                <div class="form-actions">
+                  <%= f.button :submit, "Actualizar" %>
+                </div>
+                <% end %>
+                <h3>Cancelar mi cuenta</h3>
+            <div class="devise-links">
+              <p>¿No te gustó FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete, class: "btn" %></p>
+                 <%= link_to "Volver", :back, class: "btn" %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="menu">
-      <ul>
-        <li>
-          <%= link_to " Mis empresas", businesses_path, class:"d-block
-          text-light p-3 border-0 lead mr-2 icon ion-md-apps w-100 col-12" %>
-        </li>
-        <li>
-          <%= link_to " Metas", savings_path, class:"d-block text-light p-3
-          border-0 lead mr-2 icon ion-md-stats col-12" %>
-        </li>
-        <li>
-          <%= link_to " Presupuesto", budgets_path, class:"d-block text-light
-          p-3 border-0 lead mr-2 icon ion-md-pie lead mr-2 col-12" %>
-        </li>
-        <li>
-          <%= link_to " Deudas", debts_path, class:"d-block text-light p-3
-          border-0 lead mr-2 icon ion-md-cash lead mr-2 col-12" %>
-        </li>
-        <% if params["controller"] == "businesses" && params["action"] == "show"
-        %>
-        <li>
-          <%= link_to " Agregar Ingreso", new_earning_path, class:"d-block
-          text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2 col-12"
-          %>
-        </li>
-        <li>
-          <%= link_to " Agregar Egreso", new_egress_path, class:"d-block
-          text-light p-3 border-0 lead mr-2 icon ion-md-cash lead mr-2 col-12"
-          %>
-        </li>
-        <li class="">
-          <%= link_to " Agregar Transferencia",
-          new_business_banking_path(@business), class:"d-block text-light p-3
-          border-0 lead mr-2 icon ion-md-cash lead mr-2 col-12" %>
-        </li>
-        <% end %>
-        <li class="logo">
-          <%= button_to " Cerrar Sesión", destroy_user_session_path, method:
-          :delete, form: { data: { turbo: :false } }, class:"btn d-block p-3
-          border-0 lead mr-2 icon ion-md-log-out lead btn-light" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+ </div>
+</body>
+</html>
