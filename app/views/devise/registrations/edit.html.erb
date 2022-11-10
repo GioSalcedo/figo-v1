@@ -7,23 +7,18 @@
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
-  <div class="wrapper">
-      <div class="left">
-          <%= cl_image_tag(current_user.avatar.key, :gravity=>"face", :height=>400, :width=>400, :crop=>"thumb")%>
-          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-      </div>
-      <div class="right">
+<div class="container">
+          <div class="container">
+            <div class="wrapper">
+            <div class="row">
+                <div class="left col-12">
+                  <%= cl_image_tag(current_user.avatar.key, :gravity=>"face", :height=>400, :width=>400, :crop=>"thumb")%>
+                  <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+                </div>
+          <div class="row">
+      <div class="right col-12">
           <div class="info">
               <h3>Mi información</h3>
-              <div class="info_data">
-                  <div class="data">
-                      <h4>Email</h4>
-                      <h3>
-                      <%= current_user.email %>
-                      </h3>
-                  </div>
-              </div>
-          </div>
           <div class="informacion_user">
               <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= f.error_notification %>
@@ -62,8 +57,11 @@
 
             <%= link_to "Volver", :back, class: "btn" %>
             </div>
+            </div>
           </div>
       </div>
+    </div>
   </div>
+</div>
 </body>
 </html>
