@@ -1,36 +1,35 @@
-<div class="container">
-          <div class="row">
-            <div class="col-lg-12 col-md-6">
-              <div class="card rounded-0">
-                <div class="card-header bg-light">
-                  <h6 class="font-weight-bold mb-0">Entrada de Dinero</h6>
+  <div class="col-lg-12 my-3">
+                <div class="card rounded-4 shadow-lg ">
+                  <div class="card-header text-center">
+                    <h5 class="font-weight-bold mb-0">
+                      Ingresos
+                    </h5>
+                  </div>
+                  <table>
+                      <thead>
+                        <tr>
+                          <th class="border-start p-2">Fecha</th>
+                          <th class="border-start p-2">Descripción</th>
+                          <th class="border-start p-2">Categoría</th>
+                          <th class="border-start p-2">Monto</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% current_user.businesses.each do |business| %>
+                        <% business.accounts.each do |account| %>
+                        <% account.earnings.each do |earning| %>
+                        <tr>
+                          <td class="border-start p-2"><%= earning.date %></td>
+                          <td class="border-start p-2"><%= earning.note %></td>
+                          <td class="border-start p-2"><%= earning.category %></td>
+                          <td class="border-start p-2 text-success">$<%= earning.balance %></td>
+                        </tr>
+                        <% end %>
+                        <% end %>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-  <div class="card-body">
-    <table class="tabla">
-      <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Categoría</th>
-            <th>Monto</th>
-          </tr>
-      </thead>
-    <% current_user.businesses.each do |business| %>
-      <% business.accounts.each do |account| %>
-        <% account.earnings.each do |earning| %>
-                    <tbody>
-                      <tr>
-                        <td><%= earning.date %></td>
-                        <td><%= earning.note %></td>
-                        <td><%= earning.category %></td>
-                        <td><%= earning.balance %>COP</td>
-                      </tr>
-                    </tbody>
-                </div>
-              </div>
             </div>
           </div>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
