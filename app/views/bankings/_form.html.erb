@@ -3,11 +3,11 @@
     <div class="col-md-6 p-0">
       <%= simple_form_for [@business, @banking] do |f| %>
       <%= f.simple_fields_for :accounts do |o| %>
-        <%= o.input :balance %>
-        <%= o.input :category %>
-        <%= o.input :currency, label: "Moneda", as: :radio_buttons, collection:["COP"] %>
-        <%= o.input :beneficiary %>
-        <%= o.input :note %>
+
+        <%= o.input :balance, label: "Monto" %>
+        <%= o.input :category, label: "Categoría" %>
+        <%= o.input :beneficiary, label: "Beneficiario" %>
+        <%= o.input :note, label: "Observaciones" %>
         <div class="d-flex justify-content-between">
           <p class="p-2">Cuenta Origen</p>
           <%= o.select :sender_account, @business.accounts.map { |account| account.name + " " + account.id.to_s } %>
