@@ -6,6 +6,7 @@
       <%= f.input :name, label: "Nombre" %>
       <%= f.input :date, label: "Fecha", as: :date, order: [:day, :month, :year]%>
       <%= f.input :balance, label: "Monto" %>
+      <%= f.input :currency, label: "Moneda", as: :radio_buttons, collection:["COP"] %>
       <%= f.input :note, label: "Observación" %>
       <%= f.button :submit, class:"btn btn-secundary" %>
     <% end %>

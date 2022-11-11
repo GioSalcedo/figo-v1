@@ -3,6 +3,7 @@
     <div class="col-md-6 p-0">
       <%= simple_form_for [@business, @banking] do |f| %>
       <%= f.simple_fields_for :accounts do |o| %>
+
         <%= o.input :balance, label: "Monto" %>
         <%= o.input :category, label: "Categoría" %>
         <%= o.input :beneficiary, label: "Beneficiario" %>
