@@ -4,18 +4,14 @@
     <h1>Tus cuentas</h1>
     <div class="reviews-container">
 
-
       <% @accounts.each do |account| %>
       <div class="box">
         <div class="card-body">
           <h5><%= link_to account.name, account %></h5>
         </div>
       </div>
-
     <% end %>
-
     </div>
-
     <div class="reviews-container">
       <div class="box">
           <h2><%= link_to "Crear cuenta nueva", new_account_path %></h2>
