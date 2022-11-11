@@ -4,10 +4,9 @@
     <div class="titulo">
       <h1>Bienvenido a</h1>
       <h1>
-      <span>FIGO</span>
+        <span>FIGO</span>
       </h1>
     </div>
-
     <div class="formulario">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -20,13 +19,14 @@
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, label: "Recuerdame en este equipo", as: :boolean if devise_mapping.rememberable? %>
         </div>
-
+    <div class="d-flex">
       <div class="form-actions">
         <%= f.button :submit, "Inicia Sesión" %>
       </div>
       <% end %>
-    <div class="devise-links">
+      <div class="devise-links btn btn-secundary m-2">
       <%= render "devise/shared/links" %>
+      </div>
     </div>
     </div>
   </div>
