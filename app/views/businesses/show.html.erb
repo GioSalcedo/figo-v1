@@ -8,7 +8,9 @@
                 <div class="col-lg-3 col-md-6 d-flex my-3">
                   <div class="mx-auto">
                     <div class="info">
+                    <%= link_to account_path(account) do %>
                       <h6 class="text-muted"> <%= account.name.split("-")[0]%></h6>
+                    <% end %>
                       <h3 class="font-weight-bold">$<%= account.balance %></h3>
                     </div>
                   </div>
