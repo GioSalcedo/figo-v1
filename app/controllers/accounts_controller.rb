@@ -14,7 +14,6 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
-    @account.business_id = current_user.id
     if @account.save
       redirect_to @account, notice: 'La cuenta ha sido creada con éxito.'
     else
