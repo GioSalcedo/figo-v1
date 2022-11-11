@@ -1,16 +1,26 @@
-<h1>Información de la deuda</h1>
+<div class="row m-1">
+  <div class="d-flex ml-1">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to "Regresar", debts_path, class:"btn btn-info"%>
+      <%= link_to "Editar", edit_debt_path,class:"btn btn-info" %>
+    </div>
+      <%= button_to "Eliminar", debt_path, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+    </div>
 
-    <div class="card">
-
+  <div class="card w-100 rounded-4 shadow-lg min-vh-75 m-1">
+    <div class="card-body">
       <div class="card-body">
-        <h5>¿Que negocio tiene la deuda?: <%= @debt.business.name %></h5>
-        <p>Nombre de la deuda: <%= @debt.name %></p>
-        <p>Fecha de la deuda<%= @debt.date %></p>
-        <p>¿Cuanto debo?: <%= @debt.balance %></p>
-        <p>¿En que moneda?: <%= @debt.currency %></p>
-        <p>Observaciones de la deuda: <%= @debt.note %></p>
+        <h4 class="card-title fw-bold text-dark">Empresa</h4>
+          <h6><%= @debt.business.name %></h6>
+        <div class="">
+          <h5 class="card-title fw-bold text-dark me-4">Nombre</h5>
+            <h6><%= @debt.name %></h6>
+          <h5 class="card-title fw-bold text-dark me-4">Fecha</h5>
+            <h6><%= @debt.date %></h6>
+          <h5 class="card-title fw-bold text-dark me-4">Monto</h5>
+            <h6><%= @debt.balance %></h6>
+        </div>
       </div>
     </div>
-<%= link_to "Regresar", debts_path, class:"btn btn-info"%>
-<%= link_to "Editar", edit_debt_path,class:"btn btn-info" %>
-<%= button_to "Eliminar", debt_path, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+  </div>
+</div>

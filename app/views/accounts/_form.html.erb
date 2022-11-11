@@ -4,7 +4,6 @@
       <%= simple_form_for @account do |f| %>
         <%= f.input :name, label: "Nombre" %>
         <%= f.input :balance, label: "Saldo" %>
-        <%= f.input :currency, label: "Moneda", as: :radio_buttons, collection:["COP"] %>
         <%= f.button :submit, label: "Guardar", class:"btn btn-secundary" %>
       <% end %>
     </div>
