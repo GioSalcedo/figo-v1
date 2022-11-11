@@ -767,10 +767,12 @@ span {
   color: var(--mainColor);
 }
 
-.logo-home{
-      width: 70px;
-      margin-right: 0.6rem;
-      margin-top: -0.6rem;
+.logo-home span{
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: 2.7rem;
+  color: var(--mainColor);
+
 }
 
 
@@ -809,20 +811,21 @@ span {
   }
 
   .links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    max-width: 450px;
-    width: 100%;
-    height: 100%;
-    background-color: var(--mainColor);
-    z-index: 95;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(100%);
-    transition: 0.5s;
+    // position: fixed;
+    // top: 0;
+    // right: 0;
+    // max-width: 450px;
+    // width: 100px;
+    // height: 100px;
+    // background-color: var(--mainColor);
+    // z-index: 95;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // transform: translateX(100%);
+    // transition: 0.5s;
   }
+
 
   .links ul {
     flex-direction: column;
@@ -914,3 +917,17 @@ span {
     font-size: 0.8rem;
   }
 }
+
+
+// .button-home{
+//   // // background-color: var(--mainColor);
+//   // color: #fff;
+//   // border: 0;
+//   // border-radius: 0.5rem;
+//   // padding: 0.5rem 1rem;
+//   // font-size: 1.2rem;
+//   // font-weight: 600;
+//   // cursor: pointer;
+//   // transition: all 0.3s ease;
+//   // margin: 0.5rem;
+// }
