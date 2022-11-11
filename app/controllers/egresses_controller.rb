@@ -35,7 +35,7 @@ class EgressesController < ApplicationController
 
   def destroy
     @egress.destroy
-    redirect_to account_path(@egress.account)
+    redirect_to businesses_path
   end
 
   private
