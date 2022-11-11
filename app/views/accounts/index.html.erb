@@ -4,17 +4,26 @@
     <h1>Tus cuentas</h1>
     <div class="reviews-container">
 
-      <% @accounts.each do |account| %>
-      <div class="box">
+
+<div class="row ">
+  <% @accounts.each do |account| %>
+    <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-around rounded-pill mt-2">
+      <div class="card w-100 rounded-4 shadow-lg min-vh-75">
         <div class="card-body">
-          <h5><%= link_to account.name, account %></h5>
+        <h5 class="card-title fw-bold text-dark"><%= link_to account.name, account %></h5>
         </div>
       </div>
-    <% end %>
     </div>
-    <div class="reviews-container">
-      <div class="box">
-          <h2><%= link_to "Crear cuenta nueva", new_account_path %></h2>
+   <% end %>
+</div>
+</div>
+    <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-around rounded-pill mt-2">
+      <div class="card w-100 rounded-4 shadow-lg min-vh-75">
+        <div class="card-body">
+        <h5 class="card-title fw-bold text-dark"><%= link_to "Crear cuenta nueva", new_account_path, class: "shadow-lg"%></h5>
+        </div>
       </div>
+    </div>
   </div>
 </div>
+
