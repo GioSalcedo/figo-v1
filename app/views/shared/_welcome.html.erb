@@ -15,13 +15,12 @@
                   <% end %>
                   <% else %>
                     Estas son las empresas que tienes registradas.
-                  <% end %>
+                <% end %>
               </p>
             </div>
             <section class="p-1 w-25 mw-100 bg-dark bg-gradient d-flex justify-content-center">
               <div class="user_img p-2 m-1 d-flex justify-content-center">
-                <%= cl_image_tag(current_user.avatar.key, width: 1500, height: 1500, :gravity=>"face", :crop=>"crop", class:"avatar-profile-welcome rounded-circle")%>
-                <%# <p class="d-block text-light p-0 m-0">Perfil de Usuario</p> %>
+                <%= cl_image_tag(current_user.avatar.key, width: "1500", height: "1500", :gravity=>"face", :crop=>"crop", class:"avatar-profile-welcome rounded-circle", :cloud_name=>"deqsohml0")%>
               </div>
                 <div class="pt-2">
                   <p class="d-block p-0"><%= link_to "Ver mi perfil", edit_user_registration_path, class:"btn btn-secundary mb-2"%></p>
