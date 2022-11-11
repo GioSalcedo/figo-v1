@@ -1,19 +1,26 @@
-<h1>Detalle de la meta</h1>
-    <div class="card">
-      <div class="card-body">
-        <h5>¿Para que negocio se configuró la meta?: <%= @saving.business.name %></h5>
-        <p>Nombre de la meta: <%= @saving.name %></p>
-        <p>Fecha de creación de la meta<%= @saving.date %></p>
-        <p>¿Caunto quiero ahorrar?: <%= @saving.balance %></p>
-        <p>¿En que mondeda quiero ahorrar?<%= @saving.currency %></p>
-        <p>Observaciones del ahorro: <%= @saving.note %></p>
-      </div>
+<div class="row m-1">
+  <div class="d-flex ml-1">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to "Regresar", savings_path, class:"btn btn-info"%>
+      <%= link_to "Editar", edit_saving_path,class:"btn btn-info" %>
+    </div>
+      <%= button_to "Eliminar", saving_path, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
     </div>
 
-<%= link_to "Regresar", savings_path, class:"btn btn-info"%>
-
-
-<%= link_to "Editar", edit_saving_path, class:"btn btn-info"%>
-
-
-<%= button_to "Eliminar", saving_path, method: :delete, data: { confirm: "¿Estas seguro?" }, class:"btn btn-danger" %>
+  <div class="card w-100 rounded-4 shadow-lg min-vh-75 m-1">
+    <div class="card-body">
+      <div class="card-body">
+        <h4 class="card-title fw-bold text-dark">Empresa</h4>
+          <h6><%= @saving.business.name %></h6>
+        <div class="">
+          <h5 class="card-title fw-bold text-dark me-4">Nombre</h5>
+            <h6><%= @saving.name %></h6>
+          <h5 class="card-title fw-bold text-dark me-4">Fecha</h5>
+            <h6><%= @saving.date %></h6>
+          <h5 class="card-title fw-bold text-dark me-4">Monto</h5>
+            <h6><%= @saving.balance %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
