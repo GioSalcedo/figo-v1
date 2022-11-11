@@ -8,6 +8,7 @@
                 Bienvenido, <%= current_user.first_name %> <%= current_user.last_name %>
               </h1>
                 <% end %>
+              <%# Mensaje personalizado de Welcome %>
               <p class="lead text-light">
                 <% if params["controller"] == "businesses" && params["action"] == "show" %>
                   <%= link_to edit_business_path, class:"text-white" do %>
@@ -15,11 +16,29 @@
                   <% end %>
                   <% elsif @businesses %>
                     Estas son las empresas que tienes registradas.
+                  <% elsif @savings  %>
+                    Estas son las metas que tienes por cumplir.
+                  <% elsif @budgets %>
+                    Estos son los presupuestos a los que te tienes que ajustar.
+                  <% elsif @debts %>
+                    Estas son las deudas que tienes pendientes por pagar y por que te paguen.
+                  <% elsif @earnings %>
+                    Estos son los ingresos que tienes registrados.
+                  <% elsif @egresses %>
+                    Estos son los egresos que tienes registrados.
+                  <% elsif @banking %>
+                    Acá puedes hacer transferencias entre tus cuentas.
+                  <% elsif @account %>
+                    Esta es la información de tu cuenta.
+                  <% elsif @egress %>
+                    Este es el detalle de tu egreso.
+                  <% elsif @earning %>
+                    Este es el detalle de tu ingreso.
                   <% else %>
-                  <p></p>
                 <% end %>
               </p>
             </div>
+            <%# Perfil de usuario %>
             <section class="p-1 w-25 mw-100   d-flex justify-content-center">
               <div class="user_img p-2 m-1 d-flex justify-content-center">
                 <%= cl_image_tag(current_user.avatar.key, width: 1500, height: 1500, :gravity=>"face", :crop=>"crop", class:"avatar-profile-welcome rounded-circle", cloud_name: "deqsohml0") if current_user.avatar.attached? %>
