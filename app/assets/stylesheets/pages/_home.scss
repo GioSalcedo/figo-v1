@@ -639,6 +639,12 @@ header .container {
 
   }
 
+.fondeishion{
+  background-image: url(fondeishion2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 @keyframes cambiar {
   0% {
@@ -680,7 +686,7 @@ header .container {
 }
 
 .fondo .titulo span {
-  font-size: 4.0rem;
+  font-size: 6.0rem;
   color: #0b759d;
   line-height: 1.4;
   font-family: League Spartan;
