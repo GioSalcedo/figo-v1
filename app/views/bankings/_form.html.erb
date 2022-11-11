@@ -1,16 +1,24 @@
-<div class="row justify-content-center">
-  <div class="col-md-6">
-    <%= simple_form_for [@business, @banking] do |f| %>
+<div class="fondeishion">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= simple_form_for [@business, @banking] do |f| %>
       <%= f.simple_fields_for :accounts do |o| %>
         <%= o.input :balance %>
         <%= o.input :currency, as: :radio_buttons, collection:["COP"] %>
         <%= o.input :category %>
         <%= o.input :beneficiary %>
         <%= o.input :note %>
-        <%= o.select :sender_account, @business.accounts.map { |account| account.name + " " + account.id.to_s }%>
-        <%= o.select :receptor_account, @business.accounts.map { |account| account.name + " " + account.id.to_s }%>
+        <div class="d-flex justify-content-between">
+          <p class="p-2">Cuenta Origen</p>
+          <%= o.select :sender_account, @business.accounts.map { |account| account.name + " " + account.id.to_s } %>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="p-2">Cuenta Destino</p>
+          <%= o.select :receptor_account, @business.accounts.map { |account| account.name + " " + account.id.to_s }%>
+        </div>
         <% end %>
-      <%= f.submit %>
+      <%= f.submit class:"btn btn-secundary" %>
     <% end %>
+    </div>
   </div>
 </div>
