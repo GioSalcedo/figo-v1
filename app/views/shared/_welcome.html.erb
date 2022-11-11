@@ -20,7 +20,7 @@
                 <% end %>
               </p>
             </div>
-            <section class="p-1 w-25 mw-100 bg-dark bg-gradient d-flex justify-content-center">
+            <section class="p-1 w-25 mw-100   d-flex justify-content-center">
               <div class="user_img p-2 m-1 d-flex justify-content-center">
                 <%= cl_image_tag(current_user.avatar.key, width: 1500, height: 1500, :gravity=>"face", :crop=>"crop", class:"avatar-profile-welcome rounded-circle", cloud_name: "deqsohml0") if current_user.avatar.attached? %>
               </div>

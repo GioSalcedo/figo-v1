@@ -18,8 +18,7 @@
         <header>
           <div class="container">
             <div class="logo-home">
-              <%= image_tag("logo.png") %>
-              <h3></h3>
+              <span>FIGO</span>
             </div>
 
             <div class="links">
@@ -28,11 +27,11 @@
                 <li><a href="#">Noticias</a></li>
                 <li><a href="#">Testimonios</a></li>-->
                 <% if user_signed_in? %>
-                  <li><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn" %></li>
+                  <li class="m-0"><%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn button-home" %></li>
                   <li><%= link_to "Ir al Dashboard", businesses_path, class:"btn" %></li>
                 <% else %>
-                  <li><%= link_to "Iniciar sesión", new_user_session_path, class:"btn" %></li>
-                  <li><%= link_to "Registrarse", new_user_registration_path, class:"btn"%><li>
+                  <li class="m-0"><%= link_to "Iniciar sesión", new_user_session_path, class:"btn m-0" %></li>
+                  <li class="m-0"><%= link_to "Registrarse", new_user_registration_path, class:"btn m-0"%><li>
                 <% end %>
               </ul>
             </div>
