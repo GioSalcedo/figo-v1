@@ -11,7 +11,7 @@
     <div class="container">
       <div class="wrapper">
         <div class="left">
-          <%= cl_image_tag(current_user.avatar.key, :gravity=>"face", :height=>400, :width=>400, :crop=>"thumb")%>
+          <%= cl_image_tag(current_user.avatar.key, :gravity=>"face", :height=>400, :width=>400, :crop=>"thumb") if current_user.avatar.attached?%>
           <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
         </div>
       <div class="right">
@@ -47,7 +47,7 @@
                 <h3>Cancelar mi cuenta</h3>
             <div class="devise-links">
               <p>¿No te gustó FIGO? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete, class: "btn" %></p>
-                 <%= link_to "Volver", :back, class: "btn" %>
+                 <%= link_to "Volver", businesses_path , class: "btn" %>
           </div>
         </div>
       </div>
