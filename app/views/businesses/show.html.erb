@@ -1,119 +1,149 @@
-<div id="content" class="bg-grey w-100">
+<div id="content" class="bg-grey w-100 h-100">
       <section class="bg-mix py-3">
         <div class="container">
-          <div class="card rounded-0">
+          <div class="card w-100 rounded-4 shadow-lg min-vh-75">
             <div class="card-body">
-              <div class="row">
+              <div class="row p-2">
+                <%# Crear cuentas nuevas %>
                 <% @business.accounts.each do |account| %>
-                <div class="col-lg-3 col-md-6 d-flex my-3">
-                  <div class="mx-auto">
-                    <div class="info">
-                    <%= link_to account_path(account) do %>
-                      <h6 class="text-muted"> <%= account.name.split("-")[0]%></h6>
-                    <% end %>
-                      <h3 class="font-weight-bold">$<%= account.balance %></h3>
+                  <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-around rounded-pill mt-2">
+                    <div class="card w-100 rounded-4 shadow-lg min-vh-75">
+                      <div class="card-body">
+                        <h4 class="card-title fw-bold text-dark">
+                          <%= link_to account_path(account) do %>
+                        </h4>
+                        <h6 class="text-muted">
+                          <%= account.name.split("-")[0]%>
+                        </h6>
+                          <% end %>
+                        <h3 class="font-weight-bold">
+                          $ <%= account.balance %>
+                        </h3>
+                      </div>
                     </div>
                   </div>
-                </div>
                 <% end %>
-              </div>
-              <div class="col-lg-3 col-md-6 d-flex my-3">
-                <div class="mx-auto">
-                  <h6 class="text-muted">Agregar nueva cuenta</h6>
-                  <h3 class="font-weight-bold"></h3>
-                  <h3 class="font-weight-bold">
-                    <i class=""> <%= render "shared/newaccount" %></i>
-                  </h3>
+
+                <%# Agregar nueva cuentas %>
+              <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-around rounded-pill mt-2">
+                <div class="card w-100 rounded-4 shadow-lg min-vh-75">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                      Agregar nueva cuenta
+                    </h5>
+                    <span>
+                      <i class="">
+                        <%= render "shared/newaccount" %>
+                      </i>
+                    </span>
+                  </div>
                 </div>
               </div>
+              </div>
+              <div>
+              <%# Totales %>
                 <% total = 0 %>
                 <% @business.accounts.each do |account| %>
-                <% total += account.balance %>
+                  <% total += account.balance %>
                 <% end %>
-              <div class="p-2">
-                <h6 class="text-center p-1" >Saldo total en mis cuentas: $<%= total %></h6>
+            </div>
+            <div class="card w-100 rounded-4 shadow-lg min-vh-75 bg-dark bg-gradient">
+              <div class="card-body">
+                  <h4 class="card-title text-center p-0 m-0 text-light">
+                    Saldo total en mis cuentas: $ <%= total %>
+                  </h4>
               </div>
             </div>
           </div>
-        </div>
+          <div class="card rounded-4 shadow-lg min-vh-75 text-dark">
+              <div class="card-body">
+
       </section>
+
+      <section class="bg-mix py-3">
         <div class="container">
           <div class="row">
-          <div class="col-8">
-            <div class="col-lg-12 my-3">
-              <div class="card rounded-0">
-                <div class="card-header bg-light">
-                  <h6 class="font-weight-bold mb-0">Ingresos</h6>
-                </div>
-                <div class="card-body">
-                  <table class="tabla">
-                    <thead>
-                      <tr>
-                        <th>Nombre de la cuenta</th>
-                        <th>Fecha</th>
-                        <th>Descripción</th>
-                        <th>Categoría</th>
-                        <th>Monto</th>
-                      </tr>
-                    </thead>
-                    <% @business.accounts.each do |account| %>
-                    <% account.earnings.last(2).each do |earning| %>
-                    <tbody>
-                      <tr>
-                        <td><%= account.name %></td>
-                        <td><%= earning.date %></td>
-                        <td><%= earning.note %></td>
-                        <td><%= earning.category %></td>
-                        <td class="text-success">$<%= earning.balance %></td>
-                      </tr>
-                    </tbody>
-                  <% end %>
-                  <% end %>
-                   <%= link_to "Ver más ingresos", earnings_path, class:"btn btn-secundary mb-2" %>
-                  </table>
-                </div>
-              </div>
-            </div>
+            <div class="col-8">
+              <div class="col-lg-12 my-3">
+                <div class="card rounded-4 shadow-lg ">
+                  <div class="card-header text-center">
+                    <h5 class="font-weight-bold mb-0">
+                      Ingresos
+                    </h5>
+                  </div>
 
+                  <div class="card-body">
+                      <%= link_to "Ver más ingresos", earnings_path, class:"btn btn-secundary mb-3 shadow" %>
+                    <table class="tabla text-start">
+                      <thead>
+                        <tr>
+                          <th class="border-start p-2">Nombre de la cuenta</th>
+                          <th class="border-start p-2">Fecha</th>
+                          <th class="border-start p-2">Descripción</th>
+                          <th class="border-start p-2">Categoría</th>
+                          <th class="border-start p-2">Monto</th>
+                        </tr>
+                      </thead>
+                        <% @business.accounts.each do |account| %>
+                        <% account.earnings.last(2).each do |earning| %>
+                      <tbody>
+                        <tr>
+                          <td class="border-start p-2"><%= account.name.split("-")[0] %></td>
+                          <td class="border-start p-2"><%= earning.date %></td>
+                          <td class="border-start p-2"><%= earning.note %></td>
+                          <td class="border-start p-2"><%= earning.category %></td>
+                          <td class="border-start p-2 text-success">$<%= earning.balance %></td>
+                        </tr>
+                      </tbody>
+                        <% end %>
+                        <% end %>
+                    </table>
+                  </div>
+                </div>
+            </div>
+          <%# Tabla de egresos %>
             <div class="col-lg-12 my-3">
-              <div class="card rounded-0">
-                <div class="card-header bg-light">
-                  <h6 class="font-weight-bold mb-0">Egresos</h6>
+                <div class="card rounded-4 shadow-lg ">
+                  <div class="card-header text-center">
+                    <h5 class="font-weight-bold mb-0">
+                      Egresos
+                    </h5>
+                  </div>
+
+                  <div class="card-body">
+                      <%= link_to "Ver más egresos", egresses_path, class:"btn btn-secundary mb-2" %>
+                    <table class="tabla text-start">
+                      <thead>
+                        <tr>
+                          <th class="border-start p-2">Nombre de la cuenta</th>
+                          <th class="border-start p-2">Fecha</th>
+                          <th class="border-start p-2">Descripción</th>
+                          <th class="border-start p-2">Categoría</th>
+                          <th class="border-start p-2">Monto</th>
+                        </tr>
+                      </thead>
+                        <% @business.accounts.each do |account| %>
+                          <% account.egresses.last(2).each do |egress| %>
+                      <tbody>
+                        <tr>
+                          <td class="border-start p-2"><%= account.name.split("-")[0] %></td>
+                          <td class="border-start p-2"><%= egress.date %></td>
+                          <td class="border-start p-2"><%= egress.note %></td>
+                          <td class="border-start p-2"><%= egress.category %></td>
+                          <td class="border-start p-2 text-danger">$<%= egress.balance %></td>
+                        </tr>
+                      </tbody>
+                        <% end %>
+                        <% end %>
+                    </table>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <table class="tabla">
-                    <thead>
-                      <tr>
-                        <th>Nombre de la cuenta</th>
-                        <th>Fecha</th>
-                        <th>Descripción</th>
-                        <th>Categoría</th>
-                        <th>Monto</th>
-                      </tr>
-                    </thead>
-                  <% @business.accounts.each do |account| %>
-                  <% account.egresses.last(2).each do |egress| %>
-                    <tbody>
-                      <tr>
-                        <td><%= account.name %></td>
-                        <td><%= egress.date %></td>
-                        <td><%= egress.note %></td>
-                        <td><%= egress.category %></td>
-                        <td class="text-danger">$<%= egress.balance %></td>
-                      </tr>
-                    </tbody>
-                  <% end %>
-                  <% end %>
-                  <%= link_to "Ver más egresoso", egresses_path, class:"btn btn-secundary mb-2" %>
-                  </table>
-                </div>
-              </div>
             </div>
           </div>
 
             <div class="col-lg-4 my-3">
-              <div class="card rounded-0">
-                <div class="card-header bg-light">
+              <div class="card rounded-4 shadow-lg ">
+                  <div class="card-header text-center ">
                   <h6 class="font-weight-bold mb-0">Lo último</h6>
                 </div>
                   <% @business.accounts.each do |account| %>
@@ -125,11 +155,10 @@
                         <i class="icon ion-md-pricetag"></i>
                       </h2>
                     </div>
+                      <span class="badge text-bg-success badge-span ms-3">Ingreso</span>
                     <div class="align-self-center">
-                      <h6 class="d-inline-block mb-0"><%= earning.balance %></h6>
-                      <span class="badge text-bg-success badge-span">Ingreso</span>
-                      <small class="d-block text-muted"><%= earning.note %></small>
-                      <small class="d-block text-muted"><%= account.name %></small>
+                      <h6 class="d-inline-block mb-0 ms-3"><%= earning.balance %></h6>
+                      <small class="d-block text-muted ms-3"><%= account.name.split("-")[0] %></small>
                     </div>
                   </div>
                 </div>
@@ -144,11 +173,10 @@
                         <i class="icon ion-md-pricetag"></i>
                       </h2>
                     </div>
+                      <span class="badge text-bg-danger badge-span ms-3">Egreso</span>
                     <div class="align-self-center">
-                      <h6 class="d-inline-block mb-0"><%= earning.balance %></h6>
-                      <span class="badge text-bg-danger badge-span">Egreso</span>
-                      <small class="d-block text-muted"><%= earning.note %></small>
-                      <small class="d-block text-muted"><%= account.name %></small>
+                      <h6 class="d-inline-block mb-0 ms-3"><%= earning.balance %></h6>
+                      <small class="d-block text-muted ms-3"><%= account.name.split("-")[0] %></small>
                     </div>
                   </div>
                 </div>
@@ -160,6 +188,4 @@
           </div>
         </div>
       </section>
-    </div>
-  </div>
 </div>

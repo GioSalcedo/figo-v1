@@ -50,7 +50,7 @@ class BankingsController < ApplicationController
 
   def destroy
     @banking.destroy
-    redirect_to user_business_bankings
+    redirect_to businesses_path
   end
 
   private

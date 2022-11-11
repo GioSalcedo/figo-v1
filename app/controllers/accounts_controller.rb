@@ -26,7 +26,7 @@ class AccountsController < ApplicationController
 
   def update
     if @account.update(account_params)
-      redirect_to @account, notice: 'La cuenta ha sido actualizada con éxito.'
+      redirect_to @account
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class AccountsController < ApplicationController
 
   def destroy
     @account.destroy
-    redirect_to accounts_path, notice: 'La cuenta ha sido eliminada con éxito.'
+    redirect_to businesses_path
   end
 
   private

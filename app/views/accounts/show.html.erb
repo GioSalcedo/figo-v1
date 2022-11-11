@@ -1,17 +1,22 @@
-<div class="d-flex" id="content-wrapper">
-<div class="container">
 
-  <h1>Tu cuenta</h1>
-  <div class="card">
-        <div class="card-body">
-          <h5><%= @account.name %></h5>
-          <p><%= @account.balance %></p>
-          <p><%= @account.currency %></p>
+<div class="row m-1">
+  <div class="d-flex ml-1">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to "Regresar", :back, class:" btn " %>
+      <%= link_to "Editar", edit_account_path, class:" btn " %>
+    </div>
+      <%= button_to "Eliminar", account_path, method: :delete, data: { confirm: "¿Estas seguro?" }, class:" btn " %>
+    </div>
+
+  <div class="col-12 col-md-3 col-lg-3 d-flex justify-content-around rounded-pill mt-2">
+    <div class="card w-100 rounded-4 shadow-lg min-vh-75">
+      <div class="card-body">
+        <h4 class="card-title fw-bold text-dark"><%= @account.name %></h4>
+        <div class="d-flex">
+          <h5 class="card-title fw-bold text-dark"><%= @account.balance %></h5>
+          <h5 class="card-title fw-bold text-dark ms-1"><%= @account.currency %></h5>
         </div>
       </div>
-  <%= link_to "Regresar", businesses_path, class:" btn " %>
-  <%= link_to "Editar", edit_account_path, class:" btn " %>
-  <%= button_to "Eliminar", account_path, method: :delete, data: { confirm: "¿Estas seguro?" }, class:" btn " %>
-
+    </div>
   </div>
 </div>

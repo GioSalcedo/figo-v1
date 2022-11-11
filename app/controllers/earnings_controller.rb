@@ -35,7 +35,7 @@ class EarningsController < ApplicationController
 
   def destroy
     @earning.destroy
-    redirect_to account_path(@earning.account)
+    redirect_to businesses_path
   end
 
   private
