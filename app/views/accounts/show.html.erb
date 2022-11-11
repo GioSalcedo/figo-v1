@@ -9,9 +9,9 @@
           <p><%= @account.currency %></p>
         </div>
       </div>
-  <%= link_to "Regresar", businesses_path %>
-  <%= link_to "Editar", edit_account_path %>
-  <%= button_to "", account_path, method: :delete, data: { confirm: "Are you sure?" }, class:"fa-solid fa-trash" %>
+  <%= link_to "Regresar", businesses_path, class:" btn " %>
+  <%= link_to "Editar", edit_account_path, class:" btn " %>
+  <%= button_to "Eliminar", account_path, method: :delete, data: { confirm: "¿Estas seguro?" }, class:" btn " %>
 
   </div>
 </div>
