@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_211406) do
     t.bigint "business_id", null: false
     t.string "name"
     t.integer "balance"
-    t.string "currency", default: "COP", null: false
+    t.string "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["business_id"], name: "index_accounts_on_business_id"
@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_211406) do
     t.string "name"
     t.date "date"
     t.integer "balance"
-    t.string "currency", default: "COP", null: false
+    t.string "currency"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_211406) do
     t.string "name"
     t.date "date"
     t.integer "balance"
-    t.string "currency", default: "COP", null: false
+    t.string "currency"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,7 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_211406) do
   create_table "earnings", force: :cascade do |t|
     t.bigint "account_id", null: false
     t.integer "balance"
-    t.string "currency", default: "COP", null: false
+    t.string "currency"
     t.string "category"
     t.date "date"
     t.string "beneficiary"
@@ -112,7 +112,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_211406) do
   create_table "egresses", force: :cascade do |t|
     t.bigint "account_id", null: false
     t.integer "balance"
-    t.string "currency", default: "COP", null: false
+    t.string "currency"
     t.string "category"
     t.date "date"
     t.string "beneficiary"
@@ -127,7 +127,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_211406) do
     t.string "name"
     t.date "date"
     t.integer "balance"
-    t.string "currency", default: "COP", null: false
+    t.string "currency"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
