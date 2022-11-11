@@ -5,7 +5,7 @@ class CreateBudgets < ActiveRecord::Migration[7.0]
       t.string :name
       t.date :date
       t.integer :balance
-      t.string :currency, default: 'COP'
+      t.string :currency
       t.text :note
 
       t.timestamps

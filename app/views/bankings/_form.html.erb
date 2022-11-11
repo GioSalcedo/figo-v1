@@ -5,6 +5,7 @@
       <%= f.simple_fields_for :accounts do |o| %>
         <%= o.input :balance %>
         <%= o.input :category %>
+        <%= o.input :currency, label: "Moneda", as: :radio_buttons, collection:["COP"] %>
         <%= o.input :beneficiary %>
         <%= o.input :note %>
         <div class="d-flex justify-content-between">

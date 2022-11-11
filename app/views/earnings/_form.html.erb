@@ -4,6 +4,7 @@
       <%= simple_form_for @earning  do |f| %>
       <%= f.association :account , label: "Cuenta", collection: current_user.accounts %>
       <%= f.input :balance, label: "Monto" %>
+      <%= f.input :currency, label: "Moneda", as: :radio_buttons, collection:["COP"] %>
       <%= f.input :category, label: "Cateogría" %>
       <%= f.input :date, label: "Fecha", as: :date, order: [:day, :month, :year]%>
       <%= f.input :beneficiary, label: "Beneficiario" %>
