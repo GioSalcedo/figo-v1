@@ -13,8 +13,10 @@
                   <%= link_to edit_business_path, class:"text-white" do %>
                     Este es el estado de cuenta de <%= @business.name %> <i class="fa-solid fa-pen-to-square"></i>
                   <% end %>
-                  <% else %>
+                  <% elsif @businesses %>
                     Estas son las empresas que tienes registradas.
+                  <% else %>
+                  <p></p>
                 <% end %>
               </p>
             </div>

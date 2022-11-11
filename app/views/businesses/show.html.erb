@@ -6,13 +6,12 @@
               <div class="row">
                 <% @business.accounts.each do |account| %>
                 <div class="col-lg-3 col-md-6 d-flex my-3">
-                <div class="mx-auto">
-                <div class="info">
-                  <h6 class="text-muted"><%= link_to account.name.split("-")[0], account_path %></h6>
-                  <h3 class="font-weight-bold">$<%= account.balance%></h3>
-                  <%# <h3 class="font-weight-bold"><%= account.currency %></h3>
-                </div>
-                </div>
+                  <div class="mx-auto">
+                    <div class="info">
+                      <h6 class="text-muted"> <%= account.name.split("-")[0]%></h6>
+                      <h3 class="font-weight-bold">$<%= account.balance %></h3>
+                    </div>
+                  </div>
                 </div>
                 <% end %>
               </div>
@@ -68,7 +67,7 @@
                     </tbody>
                   <% end %>
                   <% end %>
-                   <%= link_to "Ver más ingresos", earning_path, class:"btn btn-secundary mb-2" %>
+                   <%= link_to "Ver más ingresos", earnings_path, class:"btn btn-secundary mb-2" %>
                   </table>
                 </div>
               </div>
